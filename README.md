@@ -15,6 +15,7 @@ Here we define the `mandatory`, `recommended` and `optional` fields that allow t
 - [Interoperable Europe DCAT-AP v2](https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/dcat-application-profile-data-portals-europe/release/200)*
 - [W3C SKOS](https://www.w3.org/TR/skos-reference/)
 - [W3C JSON-LD 1.1](https://www.w3.org/TR/json-ld11/)
+- 
 
 
 
@@ -57,26 +58,29 @@ The Web form should at minimum collect all **Mandatory** properties.
 
 Below is the field list including Belgian DCAT-AP requirement levels and cardinalities, for creating a DCAT Dataset description.
 
-| Field                             | JSON-LD Property       | Range Type                                         | Cardinality | DCAT-BE Level | Predefined Value(s)                                          |
-| --------------------------------- | ---------------------- | -------------------------------------------------- | ----------- | ------------- | ------------------------------------------------------------ |
-| [Dataset IRI](#4.1.1-dataset-iri) | `@id`                  | IRI                                                | 1           | M             |                                                              |
-| [Type](#4.1.2-type)               | `@type`                | IRI                                                | 1           | M             | `dcat:Dataset`                                               |
-| [Title](#4.1.3-title)             | `dcterms:title`        | `rdf:langString`                                   | 1           | M             |                                                              |
-| [Description](#4.1.4-description) | `dcterms:description`  | `rdf:langString`                                   | 1           | M             |                                                              |
-| Identifier                        | `dcterms:identifier`   | `xsd:string`                                       | 1           | M             |                                                              |
-| Access Rights                     | `dcterms:accessRights` | IRI                                                | 1           | M             | [see here](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess) |
-| License                           | `dcterms:license`      | IRI                                                | 1           | M             |                                                              |
-| Theme                             | `dcat:theme`           | IRI                                                | 1..n        | M             | `belgif:AGRI`                                                |
-| Distribution                      | `dcat:distribution`    | [`dcat:Distribution`](#5-dcatdistribution-fiel;ds) | 0..n        | R             |                                                              |
-| Publisher                         | `dcterms:publisher`    | IRI                                                | 0..n        | R             |                                                              |
-| Modified Date                     | `dcterms:modified`     | `xsd:date`                                         | 0..1        | R             |                                                              |
-| Created Date                      | `dcterms:created`      | `xsd:date`                                         | 0..1        | R             |                                                              |
-| Spatial Coverage                  | `dcterms:spatial`      | `dcterms:Location`                                 | 0..n        | R             |                                                              |
-| Temporal Coverage                 | `dcterms:temporal`     | `dcterms:PeriodOfTime`                             | 0..n        | R             |                                                              |
-| Landing Page                      | `dcat:landingPage`     | IRI                                                | 0..n        | R             | https://favv-afsca.be/nl/open-data                           |
-| Contact Point                     | `dcat:contactPoint`    | `vcard:Organization`                               | 0..n        | O             |                                                              |
-| Issued Date                       | `dcterms:issued`       | `xsd:date`                                         | 0..1        | O             |                                                              |
-| Keyword                           | `dcat:keyword`         | `rdf:langString`                                   | 0..n        | O             |                                                              |
+| Field                             | JSON-LD Property            | Range Type                                         | Cardinality | DCAT-BE Level | Predefined Value(s)                                          |
+| --------------------------------- | --------------------------- | -------------------------------------------------- | ----------- | ------------- | ------------------------------------------------------------ |
+| [Dataset IRI](#4.1.1-dataset-iri) | `@id`                       | IRI                                                | 1           | M             |                                                              |
+| [Type](#4.1.2-type)               | `@type`                     | IRI                                                | 1           | M             | `dcat:Dataset`                                               |
+| [Title](#4.1.3-title)             | `dcterms:title`             | `rdf:langString`                                   | 1           | M             |                                                              |
+| [Description](#4.1.4-description) | `dcterms:description`       | `rdf:langString`                                   | 1           | M             |                                                              |
+| [Identifier](#4.1.5-identifier)   | `dcterms:identifier`        | `xsd:string`                                       | 1           | M             |                                                              |
+| Access Rights                     | `dcterms:accessRights`      | IRI                                                | 1           | M             | [see here](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess) |
+| License                           | `dcterms:license`           | IRI                                                | 1           | M             |                                                              |
+| Theme                             | `dcat:theme`                | IRI                                                | 1...n       | M             | `belgif:AGRI`                                                |
+| Distribution                      | `dcat:distribution`         | [`dcat:Distribution`](#5-dcatdistribution-fiel;ds) | 0...n       | R             |                                                              |
+| Publisher                         | `dcterms:publisher`         | IRI                                                | 0...n       | R             |                                                              |
+| Modified Date                     | `dcterms:modified`          | `xsd:date`                                         | 0...1       | R             |                                                              |
+| Created Date                      | `dcterms:created`           | `xsd:date`                                         | 0...1       | R             |                                                              |
+| Spatial Coverage                  | `dcterms:spatial`           | `dcterms:Location`                                 | 0...n       | R             |                                                              |
+| Temporal Coverage                 | `dcterms:temporal`          | `dcterms:PeriodOfTime`                             | 0...n       | R             |                                                              |
+| Landing Page                      | `dcat:landingPage`          | IRI                                                | 0...n       | R             | https://favv-afsca.be/nl/open-data                           |
+| Metadata Page                     | `foaf:page`                 | IRI                                                | 0...1       | R             |                                                              |
+| Update Frequency                  | `dcterms:accualPeriodicity` | IRI                                                | 0...1       | R             |                                                              |
+| Contact Point                     | `dcat:contactPoint`         | `vcard:Organization`                               | 0...n       | O             |                                                              |
+| Issued Date                       | `dcterms:issued`            | `xsd:date`                                         | 0...1       | O             |                                                              |
+| Keyword                           | `dcat:keyword`              | `rdf:langString`                                   | 0...n       | O             |                                                              |
+| Subject                           | `dcterms:subject`           | IRI                                                | 0...n       | O             |                                                              |
 
 ------
 
@@ -84,11 +88,13 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 #### 4.1.1 Dataset IRI
 
-- **Form element**: IRI
+- **Form element**: text input
 
 - **Description**: Global Web identifier of the dataset.
 
 - **cardinality**: 1
+
+- **Datatype**: IRI
 
 - **Mapped to**: `@id`
 
@@ -104,11 +110,13 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 #### 4.1.2 Type
 
-* **Form element**: IRI
+* **Form element**: text input
 
 * **Description**: Type identifier, according to the DCAT standard.
 
 * **cardinality**: 1
+
+* **Datatype**: IRI
 
 * **Mapped to**: `@type`
 
@@ -124,11 +132,13 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 #### 4.1.3 Title
 
-* **Form element**: `xsd:langString`
+* **Form element**: text input (per language)
 
 * **Description**: Title of the dataset considered.
 
-* **cardinality**: 1..n
+* **Cardinality**: 1...n
+
+* **Datatype**: `rdf:langString`
 
 * **Mapped to**: `dcterms:title`
 
@@ -139,21 +149,23 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
   ```json
   {
     "dcterms:title": [
-      { "@value": "Titel in het Nederlands", "@language": "nl" },
-      { "@value": "Titre en français", "@language": "fr" },
-      { "@value": "Titel auf Deutsch", "@language": "de" },
-      { "@value": "Title in English", "@language": "en" }
+      { "@value": "titel in het nederlands", "@language": "nl" },
+      { "@value": "titre en français", "@language": "fr" },
+      { "@value": "titel auf deutsch", "@language": "de" },
+      { "@value": "title in english", "@language": "en" }
     ]
   }
   ```
 
 #### 4.1.4 Description
 
-* **Form element**: `xsd:langString`
+* **Form element**: text input (per language)
 
 * **Description**: Description of the dataset considered.
 
-* **cardinality**: 1
+* **Cardinality**: 1
+
+* **Datatype**: `rdf:langString`
 
 * **Mapped to**: `dcterms:description`
 
@@ -165,18 +177,32 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
   {
       "dcterms:description": [
           { "value": "beschrijving in het nederlands", "@language": "nl"},
-          { "value": "title in english", "@language": "fr"},
-          { "value": "title in english", "@language": "de"},
+          { "value": "description en français", "@language": "fr"},
+          { "value": "beschreibung auf deutsch", "@language": "de"},
           { "value": "description in english", "@language": "en"},
       ]
   }
   ```
 
-#### 4.1.2 Identifier
+#### 4.1.5 Identifier
 
-- **Form element**: text
+- **Form element**: text input
+
+- **Description**: Alphanumeric identifier unique to the considered dataset
+
+- **Cardinality**: 1
+
+- **Datatype**: `xsd:string`
+
 - **Mapped to**: `dcterms:identifier`
-- **Datatype**: string
+
+  ```json
+  {
+      "dcterms:identifier": "list-smilies"
+  }
+  ```
+
+  
 
 #### 4.1.3 Multi-language Title / Description
 
@@ -218,7 +244,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 ### 6.1 Context
 
-```
+```json
 {
   "@context": {
     "dcat": "http://www.w3.org/ns/dcat#",
@@ -232,7 +258,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 ### 6.2 Example
 
-```
+```json
 {
   "@context": { ... },
   "@id": "https://data.example.be/dataset/traffic-counts",
