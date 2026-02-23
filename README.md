@@ -61,43 +61,43 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 | Field                                | JSON-LD Property             | Range Type                                         | Cardinality | DCAT-BE Level | Predefined Value(s)                                          |
 | ------------------------------------ | ---------------------------- | -------------------------------------------------- | ----------- | ------------- | ------------------------------------------------------------ |
-| [Dataset IRI](#4.1.1-dataset-iri)    | `@id`                        | IRI                                                | 1           | M             |                                                              |
-| [Type](#4.1.2-type)                  | `@type`                      | IRI                                                | 1           | M             | `dcat:Dataset`                                               |
-| [Title](#4.1.3-title)                | `dcterms:title`              | `rdf:langString`                                   | 1           | M             |                                                              |
-| [Description](#4.1.4-description)    | `dcterms:description`        | `rdf:langString`                                   | 1           | M             |                                                              |
-| [Identifier](#4.1.5-identifier)      | `dcterms:identifier`         | `xsd:string`                                       | 1           | M             |                                                              |
-| [Access Rights](#4.1.6-access-rights)                        | `dcterms:accessRights`       | IRI                                                | 1           | M             | [see INSPIRE controlled vocabulary](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess) |
-| [License](#4.1.7-license)                              | `dcterms:license`            | [`dcterms:LicenseDocument`](#6-dctermsLicenseDocument-fields) | 1           | M             |                                                              |
-| [Theme](#4.1.8-theme)                                | `dcat:theme`                 | IRI                                                | 1...n       | M             | [see Belgif vocabulary](https://vocab.belgif.be/auth/datatheme/) |
-| [Distribution](#4.1.9-distribution)                         | `dcat:distribution`          | [`dcat:Distribution`](#5-dcatdistribution-fields) | 0...n       | R             |                                                              |
-| [Publisher](#4.1.10-publisher)                            | `dcterms:publisher`          | IRI                                                | 0...n       | R             |                                                              |
-| [Modified Date](#4.1.11-modified-date)                        | `dcterms:modified`           | `xsd:date`                                         | 0...1       | R             |                                                              |
-| [Created Date](#4.1.12-created-date)                         | `dcterms:created`            | `xsd:date`                                         | 0...1       | R             |                                                              |
-| [Spatial Coverage](#4.1.13-spatial-coverage)                     | `dcterms:spatial`    | [`dcterms:Location`](#7-dctermslocation-fields) | 0...n       | R             |                                                              |
-| [Temporal Coverage](#4.1.14-temporal-coverage)                    | `dcterms:temporal`           | [`dcterms:PeriodOfTime`](#8-dctermsperiodoftime-fields)                             | 0...n       | R             |                                                              |
-| [Landing Page](#4.1.15-landing-page)                         | `dcat:landingPage`           | IRI                                                | 0...4       | R             | https://favv-afsca.be/nl/open-data                           |
-| [Metadata Page](#4.1.16-metadata-page)                        | `foaf:page`                  | IRI                                                | 0...1       | R             |                                                              |
-| [Update Frequency](#4.1.17-update-frequency)                     | `dcterms:accrualPeriodicity` | IRI                                                | 0...1       | R             |                                                              |
-| [Language](#4.1.18-language)                             | `dcterms:language`           | IRI                                                | 0...4       | R             |                                                              |
-| [Spatial Resolution](#4.1.19-spatial-resolution)                   | `dqv:hasQualityMeasurement`  | `dqv:QualityMeasurement`                           | 0...1       | R             |                                                              |
-| [Type Dataset](#4.1.20-type-dataset)                         | `adms:representationTechnique` | IRI                                              | 1           | R             |                                                              |
-| [Contact Point](#4.1.21-contact-point)                        | `dcat:contactPoint`          | `vcard:Organization`                               | 0...n       | O             |                                                              |
-| [Issued Date](#4.1.22-issued-date)                          | `dcterms:issued`             | `xsd:date`                                         | 0...1       | O             |                                                              |
-| [Keyword](#4.1.23-keyword)                              | `dcat:keyword`               | `rdf:langString`                                   | 0...n       | O             |                                                              |
-| [Subject](#4.1.24-subject)                              | `dcterms:subject`            | IRI                                                | 0...n       | O             |                                                              |
-| [Origin](#4.1.25-origin)                               | `dcterms:provenance`         | `dcterms:ProvenanceStatement`                      | 0...1       | O             |                                                              |
-| [Specification or Rule of Structuring](#4.1.26-specification-or-rule-of-structuring) | `dcterms:conformsTo`         | `dcterms:Standard`                                 | 0...n       | O             |                                                              |
-| [Source Dataset](#4.1.27-source-dataset)                       | `dcterms:source`             | `dcat:Dataset`                                     | 0...1       | O             |                                                              |
-| [Distribution Example](#4.1.28-distribution-example)                 | `adms:sample`                | `dcat:Distribution`                                | 0...1       | O             |                                                              |
-| [Maintainer](#4.1.29-maintainer-and-other-agent-roles)                           | `geodcat:custodian`          | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Creator](#4.1.29-maintainer-and-other-agent-roles)                              | `dcterms:creator`            | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Diffuser](#4.1.29-maintainer-and-other-agent-roles)                             | `geodcat:distributor`        | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Author](#4.1.29-maintainer-and-other-agent-roles)                               | `geodcat:originator`         | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Collector](#4.1.29-maintainer-and-other-agent-roles)                            | `geodcat:principalInvestigator` | `foaf:Organization`                             | 0...n       | O             |                                                              |
-| [Processor](#4.1.29-maintainer-and-other-agent-roles)                            | `geodcat:processor`          | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Provider](#4.1.29-maintainer-and-other-agent-roles)                             | `geodcat:resourceProvider`   | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [User](#4.1.29-maintainer-and-other-agent-roles)                                 | `geodcat:user`               | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Rights Holder](#4.1.30-rights-holder)                        | `dcterms:rightsHolder`       | `foaf:Organization`                                | 0...1       | O             |                                                              |
+| [Dataset IRI](#411-dataset-iri)    | `@id`                        | IRI                                                | 1           | M             |                                                              |
+| [Type](#412-type)                  | `@type`                      | IRI                                                | 1           | M             | `dcat:Dataset`                                               |
+| [Title](#413-title)                | `dcterms:title`              | `rdf:langString`                                   | 1           | M             |                                                              |
+| [Description](#414-description)    | `dcterms:description`        | `rdf:langString`                                   | 1           | M             |                                                              |
+| [Identifier](#415-identifier)      | `dcterms:identifier`         | `xsd:string`                                       | 1           | M             |                                                              |
+| [Access Rights](#416-access-rights)                        | `dcterms:accessRights`       | IRI                                                | 1           | M             | [see INSPIRE controlled vocabulary](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess) |
+| [License](#417-license)                              | `dcterms:license`            | [`dcterms:LicenseDocument`](#6-dctermsLicenseDocument-fields) | 1           | M             |                                                              |
+| [Theme](#418-theme)                                | `dcat:theme`                 | IRI                                                | 1...n       | M             | [see Belgif vocabulary](https://vocab.belgif.be/auth/datatheme/) |
+| [Distribution](#419-distribution)                         | `dcat:distribution`          | [`dcat:Distribution`](#5-dcatdistribution-fields) | 0...n       | R             |                                                              |
+| [Publisher](#4110-publisher)                            | `dcterms:publisher`          | IRI                                                | 0...n       | R             |                                                              |
+| [Modified Date](#4111-modified-date)                        | `dcterms:modified`           | `xsd:date`                                         | 0...1       | R             |                                                              |
+| [Created Date](#4112-created-date)                         | `dcterms:created`            | `xsd:date`                                         | 0...1       | R             |                                                              |
+| [Spatial Coverage](#4113-spatial-coverage)                     | `dcterms:spatial`    | [`dcterms:Location`](#7-dctermslocation-fields) | 0...n       | R             |                                                              |
+| [Temporal Coverage](#4114-temporal-coverage)                    | `dcterms:temporal`           | [`dcterms:PeriodOfTime`](#8-dctermsperiodoftime-fields)                             | 0...n       | R             |                                                              |
+| [Landing Page](#4115-landing-page)                         | `dcat:landingPage`           | IRI                                                | 0...4       | R             | https://favv-afsca.be/nl/open-data                           |
+| [Metadata Page](#4116-metadata-page)                        | `foaf:page`                  | IRI                                                | 0...1       | R             |                                                              |
+| [Update Frequency](#4117-update-frequency)                     | `dcterms:accrualPeriodicity` | IRI                                                | 0...1       | R             |                                                              |
+| [Language](#4118-language)                             | `dcterms:language`           | IRI                                                | 0...4       | R             |                                                              |
+| [Spatial Resolution](#4119-spatial-resolution)                   | `dqv:hasQualityMeasurement`  | `dqv:QualityMeasurement`                           | 0...1       | R             |                                                              |
+| [Type Dataset](#4120-type-dataset)                         | `adms:representationTechnique` | IRI                                              | 1           | R             |                                                              |
+| [Contact Point](#4121-contact-point)                        | `dcat:contactPoint`          | `vcard:Organization`                               | 0...n       | O             |                                                              |
+| [Issued Date](#4122-issued-date)                          | `dcterms:issued`             | `xsd:date`                                         | 0...1       | O             |                                                              |
+| [Keyword](#4123-keyword)                              | `dcat:keyword`               | `rdf:langString`                                   | 0...n       | O             |                                                              |
+| [Subject](#4124-subject)                              | `dcterms:subject`            | IRI                                                | 0...n       | O             |                                                              |
+| [Origin](#4125-origin)                               | `dcterms:provenance`         | `dcterms:ProvenanceStatement`                      | 0...1       | O             |                                                              |
+| [Specification or Rule of Structuring](#4126-specification-or-rule-of-structuring) | `dcterms:conformsTo`         | `dcterms:Standard`                                 | 0...n       | O             |                                                              |
+| [Source Dataset](#4127-source-dataset)                       | `dcterms:source`             | `dcat:Dataset`                                     | 0...1       | O             |                                                              |
+| [Distribution Example](#4128-distribution-example)                 | `adms:sample`                | `dcat:Distribution`                                | 0...1       | O             |                                                              |
+| [Maintainer](#4129-maintainer-and-other-agent-roles)                           | `geodcat:custodian`          | `foaf:Organization`                                | 0...n       | O             |                                                              |
+| [Creator](#4129-maintainer-and-other-agent-roles)                              | `dcterms:creator`            | `foaf:Organization`                                | 0...n       | O             |                                                              |
+| [Diffuser](#4129-maintainer-and-other-agent-roles)                             | `geodcat:distributor`        | `foaf:Organization`                                | 0...n       | O             |                                                              |
+| [Author](#4129-maintainer-and-other-agent-roles)                               | `geodcat:originator`         | `foaf:Organization`                                | 0...n       | O             |                                                              |
+| [Collector](#4129-maintainer-and-other-agent-roles)                            | `geodcat:principalInvestigator` | `foaf:Organization`                             | 0...n       | O             |                                                              |
+| [Processor](#4129-maintainer-and-other-agent-roles)                            | `geodcat:processor`          | `foaf:Organization`                                | 0...n       | O             |                                                              |
+| [Provider](#4129-maintainer-and-other-agent-roles)                             | `geodcat:resourceProvider`   | `foaf:Organization`                                | 0...n       | O             |                                                              |
+| [User](#4129-maintainer-and-other-agent-roles)                                 | `geodcat:user`               | `foaf:Organization`                                | 0...n       | O             |                                                              |
+| [Rights Holder](#4130-rights-holder)                        | `dcterms:rightsHolder`       | `foaf:Organization`                                | 0...1       | O             |                                                              |
 
 ------
 
@@ -635,20 +635,20 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 | Field | JSON-LD Property | Range Type | Cardinality | DCAT-BE Level | Predefined Value(s) |
 |---|---|---|---|---|---|
-| [Access URL](#5.1.1-access-url) | `dcat:accessURL` | IRI | 1 | M | |
-| [Format](#5.1.2-format) | `dcterms:format` | IRI | 1 | M | [File Type Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/file-type) |
-| [Title](#5.1.3-title) | `dcterms:title` | `rdf:langString` | 0...1 | O | |
-| [Description](#5.1.4-description) | `dcterms:description` | `rdf:langString` | 0...1 | O | |
-| [Media Type](#5.1.5-media-type) | `dcat:mediaType` | IRI | 0...1 | O | [IANA Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml) |
-| [Download URL](#5.1.6-download-url) | `dcat:downloadURL` | IRI | 0...1 | O | |
-| [Compression Format](#5.1.7-compression-format) | `dcat:compressFormat` | IRI | 0...1 | O | |
-| [Conforms To](#5.1.8-conforms-to) | `dcterms:conformsTo` | `dcterms:Standard` | 0...1 | O | |
-| [Byte Size](#5.1.9-byte-size) | `dcat:byteSize` | `xsd:decimal` | 0...1 | O | |
-| [Status](#5.1.10-status) | `adms:status` | IRI | 0...1 | O | [ADMS Status Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/dataset-status) |
-| [Spatial Coverage](#5.1.11-spatial-coverage) | `dcterms:spatial` | `dcterms:Location` | 0...1 | O | |
-| [Temporal Coverage](#5.1.12-temporal-coverage) | `dcterms:temporal` | `dcterms:PeriodOfTime` | 0...1 | R | |
-| [Type](#5.1.13-type) | `dcterms:type` | IRI | 0...n | O | [Distribution Type Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/distribution-type) |
-| [Language](#5.1.14-language) | `dcterms:language` | IRI | 0...4 | R | [Language Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language) |
+| [Access URL](#511-access-url) | `dcat:accessURL` | IRI | 1 | M | |
+| [Format](#512-format) | `dcterms:format` | IRI | 1 | M | [File Type Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/file-type) |
+| [Title](#513-title) | `dcterms:title` | `rdf:langString` | 0...1 | O | |
+| [Description](#514-description) | `dcterms:description` | `rdf:langString` | 0...1 | O | |
+| [Media Type](#515-media-type) | `dcat:mediaType` | IRI | 0...1 | O | [IANA Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml) |
+| [Download URL](#516-download-url) | `dcat:downloadURL` | IRI | 0...1 | O | |
+| [Compression Format](#517-compression-format) | `dcat:compressFormat` | IRI | 0...1 | O | |
+| [Conforms To](#518-conforms-to) | `dcterms:conformsTo` | `dcterms:Standard` | 0...1 | O | |
+| [Byte Size](#519-byte-size) | `dcat:byteSize` | `xsd:decimal` | 0...1 | O | |
+| [Status](#5110-status) | `adms:status` | IRI | 0...1 | O | [ADMS Status Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/dataset-status) |
+| [Spatial Coverage](#5111-spatial-coverage) | `dcterms:spatial` | `dcterms:Location` | 0...1 | O | |
+| [Temporal Coverage](#5112-temporal-coverage) | `dcterms:temporal` | `dcterms:PeriodOfTime` | 0...1 | R | |
+| [Type](#5113-type) | `dcterms:type` | IRI | 0...n | O | [Distribution Type Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/distribution-type) |
+| [Language](#5114-language) | `dcterms:language` | IRI | 0...4 | R | [Language Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language) |
 
 ------
 
@@ -860,9 +860,9 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 | Field | JSON-LD Property | Range Type | Cardinality | DCAT-BE Level | Predefined Value(s) |
 |---|---|---|---|---|---|
-| [Title](#6.1.1-title) | `dcterms:title` | `rdf:langString` | 1...n | M | |
-| [Type](#6.1.2-type) | `dcterms:type` | IRI | 1 | R | `dcmi:Text` |
-| [Description](#6.1.3-description) | `dcterms:description` | `rdf:langString` | 0...1 | O | |
+| [Title](#611-title) | `dcterms:title` | `rdf:langString` | 1...n | M | |
+| [Type](#612-type) | `dcterms:type` | IRI | 1 | R | `dcmi:Text` |
+| [Description](#613-description) | `dcterms:description` | `rdf:langString` | 0...1 | O | |
 
 ------
 
@@ -925,10 +925,10 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 | Field | JSON-LD Property | Range Type | Cardinality | DCAT-BE Level | Predefined Value(s) |
 |---|---|---|---|---|---|
-| [Geometry](#7.1.1-geometry) | `locn:geometry` | `xsd:string` | 1...4 | M | WKT or GML |
-| [Geographic Bounding Box](#7.1.2-geographic-bounding-box) | `dcat:bbox` | `xsd:string` | 1...4 | M | |
-| [Name](#7.1.3-name) | `skos:prefLabel` | `rdf:langString` | 0...1 | R | |
-| [Identifier](#7.1.4-identifier) | `dcterms:identifier` | IRI | 0...1 | R | |
+| [Geometry](#711-geometry) | `locn:geometry` | `xsd:string` | 1...4 | M | WKT or GML |
+| [Geographic Bounding Box](#712-geographic-bounding-box) | `dcat:bbox` | `xsd:string` | 1...4 | M | |
+| [Name](#713-name) | `skos:prefLabel` | `rdf:langString` | 0...1 | R | |
+| [Identifier](#714-identifier) | `dcterms:identifier` | IRI | 0...1 | R | |
 
 ------
 
@@ -998,8 +998,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 | Field | JSON-LD Property | Range Type | Cardinality | DCAT-BE Level | Predefined Value(s) |
 |---|---|---|---|---|---|
-| [Start Date](#8.1.1-start-date) | `dcat:startDate` | `xsd:date` / `xsd:dateTime` | 1 | M | |
-| [End Date](#8.1.2-end-date) | `dcat:endDate` | `xsd:date` / `xsd:dateTime` | 1 | M | |
+| [Start Date](#811-start-date) | `dcat:startDate` | `xsd:date` / `xsd:dateTime` | 1 | M | |
+| [End Date](#812-end-date) | `dcat:endDate` | `xsd:date` / `xsd:dateTime` | 1 | M | |
 
 ------
 
@@ -1060,8 +1060,21 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 ```json
 {
-    "@context": {...},
-    "@id": "https://favv-afsca.be/nl/open-data/dataset/fasfc-smileys",
+    "@context": {
+        "adms": "http://www.w3.org/ns/adms#",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dct": "http://purl.org/dc/terms/",
+        "dcmi": "http://purl.org/dc/dcmitype/",
+        "dqv": "http://www.w3.org/ns/dqv#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "geodcat": "http://data.europa.eu/930/",
+        "gsp": "http://www.opengis.net/ont/geosparql#",
+        "locn": "http://www.w3.org/ns/locn#",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@id": "https://www.static.favv.be/bo-documents/inter_liste_smiley",
     "@type": "dcat:Dataset",
     "dcterms:title": [
         {
@@ -1091,14 +1104,19 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
             "@language": "en"
         }
     ],
-    "dcterms:identifier": "fasfc-smileys",
+    "dcterms:identifier": "favv-smileys",
     "dcterms:accessRights": {
         "@id": "http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations"
     },
     "dcterms:license": {
         "@type": "dcterms:LicenseDocument",
-        "dcterms:title": "Belgian Federal Open Data License",
         "dcterms:type": "dcmi:Text",
+        "dcterms:title": [
+            {
+                "@value": "Licentietitel",
+                "@language": "nl"
+            }
+        ],
         "dcterms:description": {
             "@language": "nl",
             "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die in een machinaal leesbaar formaat worden aangeboden en gratis te hergebruiken zijn, zowel voor commercieel als niet-commercieel gebruik, op voorwaarde dat de gebruiker de bron en de datum van laatste bijwerking vermeldt. De inhoud van de hergebruikte informatie mag niet misleidend zijn. In het bijzonder mag deze inhoud geen aanleiding geven tot de veronderstelling dat de gebruiker verbonden is met, de steun heeft van, goedgekeurd is door of een officieel statuut heeft verkregen van het FAVV."
@@ -1106,7 +1124,10 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
     },
     "dcat:theme": [
         {
-            "@id": "http://publications.europa.eu/resource/authority/data-theme/HEAL"
+            "@id": "https://vocab.belgif.be/auth/datatheme/HEAL"
+        },
+        {
+            "@id": "https://vocab.belgif.be/auth/datatheme/ECON"
         }
     ],
     "dcat:distribution": [
@@ -1132,9 +1153,80 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
         }
     ],
     "dcterms:publisher": {
-        "@id": "https://org.belgium.be/favv-afsca",
+        "@id": "https://favv-afsca.be",
         "@type": "foaf:Organization",
-        "foaf:name": "Federaal Agentschap voor de veiligheid van de voedselketen"
+        "foaf:mbox": "mailto:center.contact@favv-afsca.be",
+        "foaf:workplaceHomepage": {
+            "@id": "https://favv-afsca.be"
+        },
+        "foaf:name": [
+            {
+                "@value": "Federaal Agentschap voor de veiligheid van de voedselketen",
+                "@language": "nl"
+            },
+            {
+                "@value": "Agence fédérale pour la sécurité de la chaîne alimentaire",
+                "@language": "fr"
+            },
+            {
+                "@value": "Federal Agency for the Safety of the Food Chain",
+                "@language": "en"
+            }
+        ],
+        "locn:address": {
+            "@type": "locn:Address",
+            "locn:adminUnitL1": [
+                {
+                    "@value": "België",
+                    "@language": "nl"
+                },
+                {
+                    "@value": "Belgique",
+                    "@language": "fr"
+                },
+                {
+                    "@value": "Belgium",
+                    "@language": "en"
+                }
+            ],
+            "locn:thoroughfare": [
+                {
+                    "@value": "Kruidtuinlaan 55",
+                    "@language": "nl"
+                }
+            ],
+            "locn:postName": [
+                {
+                    "@value": "Brussel",
+                    "@language": "nl"
+                }
+            ],
+            "locn:postCode": 1000
+        }
+    },
+    "dcterms:modified": "2026-02-23",
+    "dcterms:created": "2012-06-01",
+    "dcterms:spatial": {
+        "@type": "dcterms:Location",
+        "skos:prefLabel": [
+            {
+                "@value": "België",
+                "@language": "nl"
+            },
+            {
+                "@value": "Belgique",
+                "@language": "fr"
+            },
+            {
+                "@value": "Belgium",
+                "@language": "en"
+            }
+        ],
+        "dcterms:identifier": "http://publications.europa.eu/resource/authority/country/BEL",
+        "dcat:bbox": {
+            "@type": "gsp:wktLiteral",
+            "@value": "POLYGON((2.51357303225 49.5294835476, 6.15665815596 49.5294835476, 6.15665815596 51.4750237087, 2.51357303225 51.4750237087, 2.51357303225 49.5294835476))"
+        }
     },
     "dcat:contactPoint": {
         "@type": "vcard:Organization",
@@ -1145,9 +1237,6 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
     },
     "dcterms:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/WEEKLY"
-    },
-    "dcterms:spatial": {
-        "@id": "http://publications.europa.eu/resource/authority/country/BEL"
     },
     "dcterms:language": [
         {

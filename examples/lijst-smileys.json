@@ -64,6 +64,9 @@
     "dcat:theme": [
         {
             "@id": "https://vocab.belgif.be/auth/datatheme/HEAL"
+        },
+        {
+            "@id": "https://vocab.belgif.be/auth/datatheme/ECON"
         }
     ],
     "dcat:distribution": [
