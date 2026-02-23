@@ -1,0 +1,194 @@
+{
+    "@context": {
+        "adms": "http://www.w3.org/ns/adms#",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dct": "http://purl.org/dc/terms/",
+        "dcmi": "http://purl.org/dc/dcmitype/",
+        "dqv": "http://www.w3.org/ns/dqv#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "geodcat": "http://data.europa.eu/930/",
+        "gsp": "http://www.opengis.net/ont/geosparql#",
+        "locn": "http://www.w3.org/ns/locn#",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@id": "https://www.static.favv.be/bo-documents/inter_liste_smiley",
+    "@type": "dcat:Dataset",
+    "dcterms:title": [
+        {
+            "@value": "Lijst Smileys",
+            "@language": "nl"
+        },
+        {
+            "@value": "Liste Smileys",
+            "@language": "fr"
+        },
+        {
+            "@value": "List of Smileys",
+            "@language": "en"
+        }
+    ],
+    "dcterms:description": [
+        {
+            "@value": "De lijst van Smileys geeft een lijst van alle bedrijven die op dit ogenblik een smiley hebben. De smiley is een zelfklever die aantoont dat het bedrijf een geloofwaardig systeem van hygiëne toepast.",
+            "@language": "nl"
+        },
+        {
+            "@value": "La liste de Smileys reprend toutes les entreprises qui possèdent actuellement un smiley. Le smiley est un autocollant attestant que l'entreprise applique un système d'hygiène digne de foi.",
+            "@language": "fr"
+        },
+        {
+            "@value": "The Smileys list includes all companies that currently have a smiley face. The smiley is a sticker attesting that the company applies a reliable hygiene system.",
+            "@language": "en"
+        }
+    ],
+    "dcterms:identifier": "favv-smileys",
+    "dcterms:accessRights": {
+        "@id": "http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations"
+    },
+    "dcterms:license": {
+        "@type": "dcterms:LicenseDocument",
+        "dcterms:type": "dcmi:Text",
+        "dcterms:title": [
+            {
+                "@value": "Licentietitel",
+                "@language": "nl"
+            }
+        ],
+        "dcterms:description": {
+            "@language": "nl",
+            "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die in een machinaal leesbaar formaat worden aangeboden en gratis te hergebruiken zijn, zowel voor commercieel als niet-commercieel gebruik, op voorwaarde dat de gebruiker de bron en de datum van laatste bijwerking vermeldt. De inhoud van de hergebruikte informatie mag niet misleidend zijn. In het bijzonder mag deze inhoud geen aanleiding geven tot de veronderstelling dat de gebruiker verbonden is met, de steun heeft van, goedgekeurd is door of een officieel statuut heeft verkregen van het FAVV."
+        }
+    },
+    "dcat:theme": [
+        {
+            "@id": "https://vocab.belgif.be/auth/datatheme/HEAL"
+        }
+    ],
+    "dcat:distribution": [
+        {
+            "@id": "https://favv-afsca.be/nl/open-data/distribution/smileys-csv",
+            "@type": "dcat:Distribution",
+            "dcterms:title": {
+                "@value": "Lijst Smileys (CSV)",
+                "@language": "nl"
+            },
+            "dcterms:format": {
+                "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
+            },
+            "dcat:accessURL": {
+                "@id": "https://favv-afsca.be/nl/open-data"
+            },
+            "dcat:downloadURL": {
+                "@id": "https://www.static.favv.be/bo-documents/inter_liste_smiley.csv"
+            },
+            "dcat:mediaType": {
+                "@id": "https://www.iana.org/assignments/media-types/text/csv"
+            }
+        }
+    ],
+    "dcterms:publisher": {
+        "@id": "https://favv-afsca.be",
+        "@type": "foaf:Organization",
+        "foaf:mbox": "mailto:center.contact@favv-afsca.be",
+        "foaf:workplaceHomepage": {
+            "@id": "https://favv-afsca.be"
+        },
+        "foaf:name": [
+            {
+                "@value": "Federaal Agentschap voor de veiligheid van de voedselketen",
+                "@language": "nl"
+            },
+            {
+                "@value": "Agence fédérale pour la sécurité de la chaîne alimentaire",
+                "@language": "fr"
+            },
+            {
+                "@value": "Federal Agency for the Safety of the Food Chain",
+                "@language": "en"
+            }
+        ],
+        "locn:address": {
+            "@type": "locn:Address",
+            "locn:adminUnitL1": [
+                {
+                    "@value": "België",
+                    "@language": "nl"
+                },
+                {
+                    "@value": "Belgique",
+                    "@language": "fr"
+                },
+                {
+                    "@value": "Belgium",
+                    "@language": "en"
+                }
+            ],
+            "locn:thoroughfare": [
+                {
+                    "@value": "Kruidtuinlaan 55",
+                    "@language": "nl"
+                }
+            ],
+            "locn:postName": [
+                {
+                    "@value": "Brussel",
+                    "@language": "nl"
+                }
+            ],
+            "locn:postCode": 1000
+        }
+    },
+    "dcterms:modified": "2026-02-23",
+    "dcterms:created": "2012-06-01",
+    "dcterms:spatial": {
+        "@type": "dcterms:Location",
+        "skos:prefLabel": [
+            {
+                "@value": "België",
+                "@language": "nl"
+            },
+            {
+                "@value": "Belgique",
+                "@language": "fr"
+            },
+            {
+                "@value": "Belgium",
+                "@language": "en"
+            }
+        ],
+        "dcterms:identifier": "http://publications.europa.eu/resource/authority/country/BEL",
+        "dcat:bbox": {
+            "@type": "gsp:wktLiteral",
+            "@value": "POLYGON((2.51357303225 49.5294835476, 6.15665815596 49.5294835476, 6.15665815596 51.4750237087, 2.51357303225 51.4750237087, 2.51357303225 49.5294835476))"
+        }
+    },
+    "dcat:contactPoint": {
+        "@type": "vcard:Organization",
+        "vcard:fn": "FAVV Center Contact",
+        "vcard:hasEmail": {
+            "@id": "mailto:center.contact@favv-afsca.be"
+        }
+    },
+    "dcterms:accrualPeriodicity": {
+        "@id": "http://publications.europa.eu/resource/authority/frequency/WEEKLY"
+    },
+    "dcterms:language": [
+        {
+            "@id": "http://publications.europa.eu/resource/authority/language/NLD"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/language/FRA"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/language/ENG"
+        },
+        {
+            "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+        }
+    ],
+    "dcat:landingPage": {
+        "@id": "https://favv-afsca.be/nl/open-data"
+    }
+}
