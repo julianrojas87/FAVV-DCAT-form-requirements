@@ -8,7 +8,7 @@
     - Official `Name`, `email`, `website`, `postal address`, `municipality`, `postal code`? 
 4. What spatial information should be possible for dataset descriptions?
     - For example, `local` (all municipalities?), `regional` (all regions?) or only `federal`?.
-5. Could we use this IRI as an offical identifier of the FAVV organization?
+5. Could we use this IRI (International Resource Identifier) as an offical identifier of the FAVV organization?
     - https://favv-afsca.be
 6. What are the language requirements for the dataset descriptions?
     - Dutch, French, German and English?
