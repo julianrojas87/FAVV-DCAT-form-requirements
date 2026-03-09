@@ -78,7 +78,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 | [Landing Page](#4115-landing-page)                         | `dcat:landingPage`           | IRI                                                | 0...4       | R             | https://favv-afsca.be/nl/open-data                           |
 | [Metadata Page](#4116-metadata-page)                        | `foaf:page`                  | IRI                                                | 0...1       | R             |                                                              |
 | [Update Frequency](#4117-update-frequency)                     | `dcterms:accrualPeriodicity` | IRI                                                | 0...1       | R             |                                                              |
-| [Language](#4118-language)                             | `dcterms:language`           | IRI                                                | 0...4       | R             |                                                              |
+| [Language](#4118-language)                             | `dcterms:language`           | IRI                                                | 0...4       | R             | [See EU Language code list](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language) |
 | [Spatial Resolution](#4119-spatial-resolution)                   | `dqv:hasQualityMeasurement`  | `dqv:QualityMeasurement`                           | 0...1       | R             |                                                              |
 | [Type Dataset](#4120-type-dataset)                         | `adms:representationTechnique` | IRI                                              | 1           | R             |                                                              |
 | [Contact Point](#4121-contact-point)                        | `dcat:contactPoint`          | `vcard:Organization`                               | 0...n       | O             |                                                              |
@@ -427,11 +427,14 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Mapped to**: `dcterms:language`
 - **Predefined values**: [Language Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language)
 - **Example**:
+  
   ```json
   {
     "dcterms:language": [
       { "@id": "http://publications.europa.eu/resource/authority/language/NLD" },
-      { "@id": "http://publications.europa.eu/resource/authority/language/FRA" }
+      { "@id": "http://publications.europa.eu/resource/authority/language/FRA" },
+      { "@id": "http://publications.europa.eu/resource/authority/language/DEU" },
+      { "@id": "http://publications.europa.eu/resource/authority/language/ENG" }
     ]
   }
   ```
