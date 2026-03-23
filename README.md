@@ -243,11 +243,12 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 #### 4.1.7 License
 
-- **Form element**: [See section 6](#6-dctermsLicenseDocument-fields) for specification of `dcterms:LicenseDocument`
+- **Form element**: sub-form
 - **Description**: The license under which the dataset is made available.
 - **Cardinality**: 1
 - **Datatype**: IRI
 - **Mapped to**: `dcterms:license`
+- **Range type**: `dcterms:LicenseDocument` ([See section 6](#6-dctermsLicenseDocument-fields))
 - **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
@@ -293,13 +294,26 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: sub-form (repeatable)
 - **Description**: A physical embodiment of the dataset (e.g., a CSV file, an API).
 - **Cardinality**: 0...n
-- **Range Type**: `dcat:Distribution` (see Section 5)
+- **Range Type**: `dcat:Distribution` ([See section 5](#5-dcatdistribution-fields))
 - **Mapped to**: `dcat:distribution`
 - **Example**:
   ```json
   {
     "dcat:distribution": [
-      { "@id": "https://favv-afsca.be/nl/open-data/distribution/list-smilies-csv" }
+      {
+        "@id": "https://favv-afsca.be/nl/open-data/distribution/smileys-csv",
+        "@type": "dcat:Distribution",
+        "dcterms:title": [
+            { "@value": "Lijst Smileys (CSV)", "@language": "nl" },
+            { "@value": "Liste Smileys (CSV)", "@language": "fr" },
+            { "@value": "Liste der Smileys (CSV)", "@language": "de" },
+            { "@value": "List of Smileys (CSV)", "@language": "en" }
+        ],
+        "dcterms:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/CSV" },
+        "dcat:accessURL": { "@id": "https://favv-afsca.be/nl/open-data" },
+        "dcat:downloadURL": { "@id": "https://www.static.favv.be/bo-documents/inter_liste_smiley.csv" },
+        "dcat:mediaType": { "@id": "https://www.iana.org/assignments/media-types/text/csv" }
+        }
     ]
   }
   ```
@@ -309,7 +323,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: text input (IRI) or organization lookup
 - **Description**: The entity (organization) responsible for making the dataset available.
 - **Cardinality**: 0...n
-- **Datatype**: IRI / `foaf:Organization`
+- **Range Type**: `foaf:Organization` ([See section 11](#11-foaforganization-fields))
 - **Mapped to**: `dcterms:publisher`
 - **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
@@ -355,7 +369,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: text input (IRI) or geographic selector
 - **Description**: The geographic area covered by the dataset.
 - **Cardinality**: 0...n
-- **Range Type**: `dcterms:Location`
+- **Range Type**: `dcterms:Location` ([See section 7](#7-dctermslocation-fields))
 - **Mapped to**: `dcterms:spatial`
 - **Predefined values**: [EU Place Codelist](http://publications.europa.eu/resource/authority/place) (Recommended)
 - **Example**:
@@ -370,7 +384,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: date range picker
 - **Description**: The period of time covered by the dataset.
 - **Cardinality**: 0...n
-- **Range Type**: `dcterms:PeriodOfTime`
+- **Range Type**: `dcterms:PeriodOfTime` ([See section 8](#8-dctermsperiodoftime-fields))
 - **Mapped to**: `dcterms:temporal`
 - **Example**:
   ```json
@@ -456,7 +470,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: numeric input or distance
 - **Description**: The minimum distance between two adjacent objects that can be distinguished.
 - **Cardinality**: 0...1
-- **Range Type**: `dqv:QualityMeasurement`
+- **Range Type**: `dqv:QualityMeasurement` ([See section 9](#9-dqvqualitymeasurement-fields))
 - **Mapped to**: `dqv:hasQualityMeasurement`
 - **Example**:
   ```json
@@ -490,7 +504,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: sub-form
 - **Description**: Contact information that can be used for sending comments about the dataset.
 - **Cardinality**: 0...n
-- **Range Type**: `vcard:Organization`
+- **Range Type**: `vcard:Organization` ([See section 10](#10-vcardorganization-fields))
 - **Mapped to**: `dcat:contactPoint`
 - **Example**:
   ```json
@@ -586,7 +600,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: text input (IRI)
 - **Description**: A dataset from which the current dataset is derived.
 - **Cardinality**: 0...1
-- **Range Type**: `dcat:Dataset`
+- **Range Type**: `dcat:Dataset` ([See section 4](#4-dcatdataset-fields))
 - **Mapped to**: `dcterms:source`
 - **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
@@ -601,13 +615,26 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: sub-form
 - **Description**: A sample distribution of the dataset.
 - **Cardinality**: 0...1
-- **Range Type**: `dcat:Distribution`
+- **Range Type**: `dcat:Distribution` ([See section 5](#5-dcatdistribution-fields))
 - **Mapped to**: `adms:sample`
 - **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
-    "adms:sample": { "@id": "https://favv-afsca.be/nl/open-data/sample/smiley-sample.csv" }
+    "adms:sample": {
+        "@id": "https://favv-afsca.be/nl/open-data/sample/smiley-sample.csv",
+        "@type": "dcat:Distribution",
+        "dcterms:title": [
+            { "@value": "Lijst Smileys (CSV)", "@language": "nl" },
+            { "@value": "Liste Smileys (CSV)", "@language": "fr" },
+            { "@value": "Liste der Smileys (CSV)", "@language": "de" },
+            { "@value": "List of Smileys (CSV)", "@language": "en" }
+        ],
+        "dcterms:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/CSV" },
+        "dcat:accessURL": { "@id": "https://favv-afsca.be/nl/open-data" },
+        "dcat:downloadURL": { "@id": "https://www.static.favv.be/bo-documents/inter_liste_smiley.csv" },
+        "dcat:mediaType": { "@id": "https://www.iana.org/assignments/media-types/text/csv" }
+    }
   }
   ```
 
@@ -617,7 +644,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Mapped to**: `geodcat:custodian` (Maintainer), `dcterms:creator` (Creator), `geodcat:distributor` (Diffuser), `geodcat:originator` (Author), `geodcat:principalInvestigator` (Collector), `geodcat:processor` (Processor), `geodcat:resourceProvider` (Provider), `geodcat:user` (User).
 - **Description**: Various organizational roles responsible for the dataset.
 - **Cardinality**: 0...n
-- **Datatype**: `foaf:Organization`
+- **Range Type**: `foaf:Organization` ([See section 11](#11-foaforganization-fields))
 - **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
@@ -638,7 +665,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: text input (IRI) or organization lookup
 - **Description**: The entity that holds the rights to the dataset.
 - **Cardinality**: 0...1
-- **Datatype**: `foaf:Organization`
+- **Range Type**: `foaf:Organization` ([See section 11](#11-foaforganization-fields))
 - **Mapped to**: `dcterms:rightsHolder`
 - **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
@@ -831,7 +858,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: geographic selector or IRI
 - **Description**: The geographic area covered by the distribution.
 - **Cardinality**: 0...1
-- **Range Type**: `dcterms:Location`
+- **Range Type**: `dcterms:Location` ([See section 7](#7-dctermslocation-fields))
 - **Mapped to**: `dcterms:spatial`
 - **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
@@ -846,7 +873,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: date range picker
 - **Description**: The period of time covered by the distribution.
 - **Cardinality**: 0...1
-- **Range Type**: `dcterms:PeriodOfTime`
+- **Range Type**: `dcterms:PeriodOfTime` ([See section 8](#8-dctermsperiodoftime-fields))
 - **Mapped to**: `dcterms:temporal`
 - **Example**:
   ```json
