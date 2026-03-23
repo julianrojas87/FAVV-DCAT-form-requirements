@@ -31,6 +31,7 @@ Here we define the `mandatory`, `recommended` and `optional` fields that allow t
 | foaf    | http://xmlns.com/foaf/0.1/                  |
 | geodcat | http://data.europa.eu/930/                  |
 | rdf     | http://www.w3.org/1999/02/22-rdf-syntax-ns# |
+| sdmx-attribute | http://purl.org/linked-data/sdmx/2009/attribute# |
 | skos    | http://www.w3.org/2004/02/skos/core#        |
 | vcard   | http://www.w3.org/2006/vcard/ns#            |
 | xsd     | http://www.w3.org/2001/XMLSchema#           |
@@ -70,34 +71,34 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 | [License](#417-license)                              | `dcterms:license`            | [`dcterms:LicenseDocument`](#6-dctermsLicenseDocument-fields) | 1           | M             |                                                              |
 | [Theme](#418-theme)                                | `dcat:theme`                 | IRI                                                | 1...n       | M             | [see Belgif vocabulary](https://vocab.belgif.be/auth/datatheme/) |
 | [Distribution](#419-distribution)                         | `dcat:distribution`          | [`dcat:Distribution`](#5-dcatdistribution-fields) | 0...n       | R             |                                                              |
-| [Publisher](#4110-publisher)                            | `dcterms:publisher`          | IRI                                                | 0...n       | R             |                                                              |
-| [Modified Date](#4111-modified-date)                        | `dcterms:modified`           | `xsd:date`                                         | 0...1       | R             |                                                              |
-| [Created Date](#4112-created-date)                         | `dcterms:created`            | `xsd:date`                                         | 0...1       | R             |                                                              |
-| [Spatial Coverage](#4113-spatial-coverage)                     | `dcterms:spatial`    | [`dcterms:Location`](#7-dctermslocation-fields) | 0...n       | R             |                                                              |
-| [Temporal Coverage](#4114-temporal-coverage)                    | `dcterms:temporal`           | [`dcterms:PeriodOfTime`](#8-dctermsperiodoftime-fields)                             | 0...n       | R             |                                                              |
-| [Landing Page](#4115-landing-page)                         | `dcat:landingPage`           | IRI                                                | 0...4       | R             | https://favv-afsca.be/nl/open-data                           |
-| [Metadata Page](#4116-metadata-page)                        | `foaf:page`                  | IRI                                                | 0...1       | R             |                                                              |
-| [Update Frequency](#4117-update-frequency)                     | `dcterms:accrualPeriodicity` | IRI                                                | 0...1       | R             |                                                              |
-| [Language](#4118-language)                             | `dcterms:language`           | IRI                                                | 0...4       | R             | [See EU Language code list](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language) |
-| [Spatial Resolution](#4119-spatial-resolution)                   | `dqv:hasQualityMeasurement`  | `dqv:QualityMeasurement`                           | 0...1       | R             |                                                              |
-| [Type Dataset](#4120-type-dataset)                         | `adms:representationTechnique` | IRI                                              | 1           | R             |                                                              |
-| [Contact Point](#4121-contact-point)                        | `dcat:contactPoint`          | `vcard:Organization`                               | 0...n       | O             |                                                              |
-| [Issued Date](#4122-issued-date)                          | `dcterms:issued`             | `xsd:date`                                         | 0...1       | O             |                                                              |
+| [Publisher](#4.1.10-publisher) | `dcterms:publisher` | [`foaf:Organization`](#11-foaforganization-fields) | 0...n | R | |
+| [Modified Date](#4.1.11-modified-date) | `dcterms:modified` | `xsd:date` | 0...1 | R | |
+| [Created Date](#4.1.12-created-date) | `dcterms:created` | `xsd:date` | 0...1 | R | |
+| [Spatial Coverage](#4.1.13-spatial-coverage) | `dcterms:spatial` | [`dcterms:Location`](#7-dctermslocation-fields) | 0...n | R | |
+| [Temporal Coverage](#4.1.14-temporal-coverage) | `dcterms:temporal` | [`dcterms:PeriodOfTime`](#8-dctermsperiodoftime-fields) | 0...n | R | |
+| [Landing Page](#4.1.15-landing-page) | `dcat:landingPage` | IRI | 0...4 | R | https://favv-afsca.be/nl/open-data |
+| [Metadata Page](#4.1.16-metadata-page) | `foaf:page` | IRI | 0...1 | R | |
+| [Update Frequency](#4.1.17-update-frequency) | `dcterms:accrualPeriodicity` | IRI | 0...1 | R | |
+| [Language](#4.1.18-language) | `dcterms:language` | IRI | 0...4 | R | [See EU Language code list](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language) |
+| [Spatial Resolution](#4.1.19-spatial-resolution) | `dqv:hasQualityMeasurement` | [`dqv:QualityMeasurement`](#9-dqvqualitymeasurement-fields) | 0...1 | R | |
+| [Type Dataset](#4.1.20-type-dataset) | `adms:representationTechnique` | IRI | 1 | R | |
+| [Contact Point](#4.1.21-contact-point) | `dcat:contactPoint` | [`vcard:Organization`](#10-vcardorganization-fields) | 0...n | O | |
+| [Issued Date](#4.1.22-issued-date) | `dcterms:issued` | `xsd:date` | 0...1 | O | |
 | [Keyword](#4123-keyword)                              | `dcat:keyword`               | `rdf:langString`                                   | 0...n       | O             |                                                              |
 | [Subject](#4124-subject)                              | `dcterms:subject`            | IRI                                                | 0...n       | O             |                                                              |
 | [Origin](#4125-origin)                               | `dcterms:provenance`         | `dcterms:ProvenanceStatement`                      | 0...1       | O             |                                                              |
 | [Specification or Rule of Structuring](#4126-specification-or-rule-of-structuring) | `dcterms:conformsTo`         | `dcterms:Standard`                                 | 0...n       | O             |                                                              |
 | [Source Dataset](#4127-source-dataset)                       | `dcterms:source`             | `dcat:Dataset`                                     | 0...1       | O             |                                                              |
-| [Distribution Example](#4128-distribution-example)                 | `adms:sample`                | `dcat:Distribution`                                | 0...1       | O             |                                                              |
-| [Maintainer](#4129-maintainer-and-other-agent-roles)                           | `geodcat:custodian`          | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Creator](#4129-maintainer-and-other-agent-roles)                              | `dcterms:creator`            | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Diffuser](#4129-maintainer-and-other-agent-roles)                             | `geodcat:distributor`        | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Author](#4129-maintainer-and-other-agent-roles)                               | `geodcat:originator`         | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Collector](#4129-maintainer-and-other-agent-roles)                            | `geodcat:principalInvestigator` | `foaf:Organization`                             | 0...n       | O             |                                                              |
-| [Processor](#4129-maintainer-and-other-agent-roles)                            | `geodcat:processor`          | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Provider](#4129-maintainer-and-other-agent-roles)                             | `geodcat:resourceProvider`   | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [User](#4129-maintainer-and-other-agent-roles)                                 | `geodcat:user`               | `foaf:Organization`                                | 0...n       | O             |                                                              |
-| [Rights Holder](#4130-rights-holder)                        | `dcterms:rightsHolder`       | `foaf:Organization`                                | 0...1       | O             |                                                              |
+| [Distribution Example](#4128-distribution-example)                 | `adms:sample`                | [`dcat:Distribution`](#5-dcatdistribution-fields) | 0...1       | O             |                                                              |
+| [Maintainer](#4129-maintainer-and-other-agent-roles)                           | `geodcat:custodian`          | [`foaf:Organization`](#11-foaforganization-fields) | 0...n       | O             |                                                              |
+| [Creator](#4129-maintainer-and-other-agent-roles)                              | `dcterms:creator`            | [`foaf:Organization`](#11-foaforganization-fields) | 0...n       | O             |                                                              |
+| [Diffuser](#4129-maintainer-and-other-agent-roles)                             | `geodcat:distributor`        | [`foaf:Organization`](#11-foaforganization-fields) | 0...n       | O             |                                                              |
+| [Author](#4129-maintainer-and-other-agent-roles)                               | `geodcat:originator`         | [`foaf:Organization`](#11-foaforganization-fields) | 0...n       | O             |                                                              |
+| [Collector](#4129-maintainer-and-other-agent-roles)                            | `geodcat:principalInvestigator` | [`foaf:Organization`](#11-foaforganization-fields) | 0...n       | O             |                                                              |
+| [Processor](#4129-maintainer-and-other-agent-roles)                            | `geodcat:processor`          | [`foaf:Organization`](#11-foaforganization-fields) | 0...n       | O             |                                                              |
+| [Provider](#4129-maintainer-and-other-agent-roles)                             | `geodcat:resourceProvider`   | [`foaf:Organization`](#11-foaforganization-fields) | 0...n       | O             |                                                              |
+| [User](#4129-maintainer-and-other-agent-roles)                                 | `geodcat:user`               | [`foaf:Organization`](#11-foaforganization-fields) | 0...n       | O             |                                                              |
+| [Rights Holder](#4130-rights-holder)                        | `dcterms:rightsHolder`       | [`foaf:Organization`](#11-foaforganization-fields) | 0...1       | O             |                                                              |
 
 ------
 
@@ -115,7 +116,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 - **Mapped to**: `@id`
 
-- **Notes**: The form must validate that a well-formed IRI is given. Ideally it should be a dereference-able IRI.
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 
 - **Example**:
 
@@ -139,6 +140,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 * **Predefined value**: `dcat:Dataset`
 
+* **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
+
 * **Example**:
 
   ```json
@@ -153,7 +156,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 * **Description**: Title of the dataset considered.
 
-* **Cardinality**: 1...n
+* **Cardinality**: 1
 
 * **Datatype**: `rdf:langString`
 
@@ -227,6 +230,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Datatype**: IRI
 - **Mapped to**: `dcterms:accessRights`
 - **Predefined values**: [INSPIRE registry for Limitations on Public Access](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess)
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   
   ```json
@@ -244,6 +248,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 1
 - **Datatype**: IRI
 - **Mapped to**: `dcterms:license`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -272,6 +277,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Datatype**: IRI
 - **Mapped to**: `dcat:theme`
 - **Predefined values**: [Data Theme Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/data-theme)
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -305,6 +311,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...n
 - **Datatype**: IRI / `foaf:Organization`
 - **Mapped to**: `dcterms:publisher`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -382,6 +389,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...4
 - **Datatype**: IRI
 - **Mapped to**: `dcat:landingPage`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -396,6 +404,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Datatype**: IRI
 - **Mapped to**: `foaf:page`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -411,6 +420,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Datatype**: IRI
 - **Mapped to**: `dcterms:accrualPeriodicity`
 - **Predefined values**: [Frequency Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/frequency)
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -426,6 +436,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Datatype**: IRI
 - **Mapped to**: `dcterms:language`
 - **Predefined values**: [Language Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language)
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   
   ```json
@@ -453,7 +464,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
       "@type": "dqv:QualityMeasurement",
       "dqv:isMeasurementOf": { "@id": "http://data.europa.eu/dr8/SpatialResolution" },
       "dqv:value": { "@value": "10.0", "@type": "xsd:decimal" },
-      "dqv:unit": { "@id": "http://publications.europa.eu/resource/authority/unit/M" }
+      "sdmx-attribute:unitMeasure": { "@id": "http://publications.europa.eu/resource/authority/unit/M" }
     }
   }
   ```
@@ -465,6 +476,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 1
 - **Datatype**: IRI
 - **Mapped to**: `adms:representationTechnique`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -528,6 +540,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...n
 - **Datatype**: IRI
 - **Mapped to**: `dcterms:subject`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -559,6 +572,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...n
 - **Range Type**: `dcterms:Standard`
 - **Mapped to**: `dcterms:conformsTo`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -573,6 +587,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Range Type**: `dcat:Dataset`
 - **Mapped to**: `dcterms:source`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -587,6 +602,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Range Type**: `dcat:Distribution`
 - **Mapped to**: `adms:sample`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -601,6 +617,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Description**: Various organizational roles responsible for the dataset.
 - **Cardinality**: 0...n
 - **Datatype**: `foaf:Organization`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -622,6 +639,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Datatype**: `foaf:Organization`
 - **Mapped to**: `dcterms:rightsHolder`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -664,6 +682,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 1
 - **Datatype**: IRI
 - **Mapped to**: `dcat:accessURL`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -678,6 +697,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 1
 - **Datatype**: IRI
 - **Mapped to**: `dcterms:format`
+- **Predefined values**: [File Type Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/file-type)
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -720,6 +741,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Datatype**: IRI
 - **Mapped to**: `dcat:mediaType`
+- **Predefined values**: [IANA Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml)
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -734,6 +757,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Datatype**: IRI
 - **Mapped to**: `dcat:downloadURL`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -748,6 +772,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Datatype**: IRI
 - **Mapped to**: `dcat:compressFormat`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -762,6 +787,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Range Type**: `dcterms:Standard`
 - **Mapped to**: `dcterms:conformsTo`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -790,6 +816,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Datatype**: IRI
 - **Mapped to**: `adms:status`
+- **Predefined values**: [ADMS Status Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/dataset-status)
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -804,6 +832,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Range Type**: `dcterms:Location`
 - **Mapped to**: `dcterms:spatial`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -823,7 +852,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
   {
     "dcterms:temporal": {
       "@type": "dcterms:PeriodOfTime",
-      "dcat:startDate": { "@value": "2024-01-01", "@type": "xsd:date" }
+      "dcat:startDate": { "@value": "2024-01-01", "@type": "xsd:date" },
+      "dcat:endDate": { "@value": "2024-12-31", "@type": "xsd:date" }
     }
   }
   ```
@@ -835,6 +865,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...n
 - **Datatype**: IRI
 - **Mapped to**: `dcterms:type`
+- **Predefined values**: [Distribution Type Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/distribution-type)
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -849,6 +881,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...4
 - **Datatype**: IRI
 - **Mapped to**: `dcterms:language`
+- **Predefined values**: [Language Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language)
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -863,8 +897,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 | Field | JSON-LD Property | Range Type | Cardinality | DCAT-BE Level | Predefined Value(s) |
 |---|---|---|---|---|---|
-| [Title](#611-title) | `dcterms:title` | `rdf:langString` | 1...n | M | |
-| [Type](#612-type) | `dcterms:type` | IRI | 1 | R | `dcmi:Text` |
+| [Title](#611-title) | `dcterms:title` | `rdf:langString` | 1...n | M | `dcmi:Text` |
+| [Type](#612-type) | `dcterms:type` | IRI | 1 | R |  |
 | [Description](#613-description) | `dcterms:description` | `rdf:langString` | 0...1 | O | |
 
 ------
@@ -891,12 +925,21 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 #### 6.1.2 Type
 
 - **Form element**: text input (IRI)
+
 - **Description**: The nature or genre of the document.
+
 - **Cardinality**: 1
+
 - **Datatype**: IRI
+
 - **Mapped to**: `dcterms:type`
-- **Predefined value**: `dcmi:Text`
+
+- **Predefined values**: `dcmi:Text`
+
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
+
 - **Example**:
+  
   ```json
   {
     "dcterms:type": { "@id": "http://purl.org/dc/dcmitype/Text" }
@@ -986,6 +1029,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...1
 - **Datatype**: IRI
 - **Mapped to**: `dcterms:identifier`
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
   {
@@ -1038,9 +1082,169 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 ------
 
-## 9. JSON-LD Output
+## 9. `dqv:QualityMeasurement` fields
 
-### 9.1 Context
+Below is the field list including Belgian DCAT-AP requirement levels and cardinalities, for defining Quality Measurement (specifically for Spatial Resolution).
+
+| Field | JSON-LD Property | Range Type | Cardinality | DCAT-BE Level | Predefined Value(s) |
+|---|---|---|---|---|---|
+| [Measured Scalar Quantity](#9.1.1-measured-scalar-quantity) | `dqv:isMeasurementOf` | IRI | 0...1 | O | `http://data.europa.eu/dr8/SpatialResolution` |
+| [Spatial Resolution as Scale](#9.1.2-spatial-resolution-as-scale) | `geodcat:spatialResolutionAsScale` | `xsd:decimal` | 1 | M (vector) | |
+| [Unit of Measure](#9.1.3-unit-of-measure) | `sdmx-attribute:unitMeasure` | `skos:Concept` | 1 | R (raster) | |
+| [Value of Measurement](#9.1.4-value-of-measurement) | `dqv:value` | `xsd:decimal` | 1 | M (raster) | |
+
+------
+
+### 9.1 Field-by-field specification
+
+#### 9.1.1 Measured Scalar Quantity
+
+- **Form element**: Read-only input or select
+- **Description**: The quality dimension being measured (typically Spatial Resolution).
+- **Cardinality**: 0...1
+- **Datatype**: IRI
+- **Mapped to**: `dqv:isMeasurementOf`
+- **Example**:
+  ```json
+  {
+    "dqv:isMeasurementOf": { "@id": "http://data.europa.eu/dr8/SpatialResolution" }
+  }
+  ```
+
+#### 9.1.2 Spatial Resolution as Scale
+
+- **Form element**: Number input
+- **Description**: The scale denominator of the dataset (e.g., 5000 for 1:5000).
+- **Cardinality**: 1 (Mandatory for vector resources)
+- **Datatype**: `xsd:decimal`
+- **Mapped to**: `geodcat:spatialResolutionAsScale`
+- **Example**:
+  ```json
+  {
+    "geodcat:spatialResolutionAsScale": { "@value": "5000", "@type": "xsd:decimal" }
+  }
+  ```
+
+#### 9.1.3 Unit of Measure
+
+- **Form element**: Select list (controlled vocabulary)
+- **Description**: The unit of measurement for the resolution (for raster data).
+- **Cardinality**: 1 (Recommended for raster resources)
+- **Datatype**: `skos:Concept`
+- **Mapped to**: `sdmx-attribute:unitMeasure`
+- **Example**:
+  ```json
+  {
+    "sdmx-attribute:unitMeasure": { "@id": "http://publications.europa.eu/resource/authority/unit/M" }
+  }
+  ```
+
+#### 9.1.4 Value of Measurement
+
+- **Form element**: Number input
+- **Description**: The resolution value or distance (for raster data).
+- **Cardinality**: 1 (Mandatory for raster resources)
+- **Datatype**: `xsd:decimal`
+- **Mapped to**: `dqv:value`
+- **Example**:
+  ```json
+  {
+    "dqv:value": { "@value": "10.0", "@type": "xsd:decimal" }
+  }
+  ```
+
+------
+
+## 10. `vcard:Organization` fields
+
+Below is the field list including Belgian DCAT-AP requirement levels and cardinalities, for defining Contact Point descriptions using `vcard:Organization`.
+
+| Field | JSON-LD Property | Range Type | Cardinality | DCAT-BE Level | Predefined Value(s) |
+|---|---|---|---|---|---|
+| [Name](#10.1.1-name) | `vcard:organization-name` | `rdf:langString` | 1...n | M | |
+| [Email](#10.1.2-email) | `vcard:hasEmail` | URI (`mailto:`) | 0...1 | R | |
+| [Website](#10.1.3-website) | `vcard:hasURL` | IRI | 0...4 | R | |
+| [Address](#10.1.4-address) | `vcard:hasAddress` | `vcard:Address` | 0...1 | O | |
+
+### 10.1 Field-by-field specification
+
+#### 10.1.1 Name
+- **Form element**: text input (per language)
+- **Description**: The name of the organization.
+- **Cardinality**: 1...n
+- **Mapped to**: `vcard:organization-name`
+
+#### 10.1.2 Email
+- **Form element**: email input
+- **Description**: The email address of the contact point.
+- **Cardinality**: 0...1
+- **Mapped to**: `vcard:hasEmail`
+- **Example**: `{ "vcard:hasEmail": { "@id": "mailto:info@example.be" } }`
+
+#### 10.1.3 Website
+- **Form element**: URL input
+- **Description**: The website of the organization.
+- **Cardinality**: 0...4
+- **Mapped to**: `vcard:hasURL`
+
+#### 10.1.4 Address
+- **Form element**: nested group
+- **Description**: The postal address of the organization.
+- **Sub-properties** (Mandatory if address provided):
+  - `vcard:street-address`: Street and number.
+  - `vcard:locality`: City/Municipality.
+  - `vcard:postal-code`: Postal code.
+  - `vcard:country-name`: Country.
+
+------
+
+## 11. `foaf:Organization` fields
+
+Below is the field list including Belgian DCAT-AP requirement levels and cardinalities, for defining Publisher or Agent descriptions using `foaf:Organization`.
+
+| Field | JSON-LD Property | Range Type | Cardinality | DCAT-BE Level | Predefined Value(s) |
+|---|---|---|---|---|---|
+| [Name](#11.1.1-name) | `foaf:name` | `rdf:langString` | 1...n | M | |
+| [Type](#11.1.2-type) | `dcterms:type` | `skos:Concept` | 0...1 | O | |
+| [Email](#11.1.3-email) | `foaf:mbox` | URI (`mailto:`) | 0...1 | R | |
+| [Website](#11.1.4-website) | `foaf:workplaceHomepage` | IRI | 1...4 | R | |
+| [Address](#11.1.5-address) | `locn:address` | `locn:Address` | 0...1 | O | |
+
+### 11.1 Field-by-field specification
+
+#### 11.1.1 Name
+- **Form element**: text input (per language)
+- **Description**: The name of the agent.
+- **Cardinality**: 1...n
+- **Mapped to**: `foaf:name`
+
+#### 11.1.2 Type
+- **Form element**: select list (controlled vocabulary)
+- **Description**: The type of the agent (e.g., Company, NGO, etc.).
+- **Cardinality**: 0...1
+- **Mapped to**: `dcterms:type`
+
+#### 11.1.3 Email
+- **Form element**: email input
+- **Description**: The public email mailbox of the agent.
+- **Cardinality**: 0...1
+- **Mapped to**: `foaf:mbox`
+
+#### 11.1.4 Website
+- **Form element**: URL input
+- **Description**: The official website of the agent.
+- **Cardinality**: 1...4
+- **Mapped to**: `foaf:workplaceHomepage`
+
+#### 11.1.5 Address
+- **Form element**: nested group
+- **Description**: The postal address of the agent using the `locn` vocabulary.
+
+------
+
+## 12. JSON-LD Output
+
+### 12.1 Context
 
 ```json
 {
@@ -1053,13 +1257,14 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
       "dqv": "http://www.w3.org/ns/dqv#",
       "foaf": "http://xmlns.com/foaf/0.1/",
       "geodcat": "http://data.europa.eu/930/",
-      "vcard": "http://www.w3.org/2006/vcard/ns#",
-      "xsd": "http://www.w3.org/2001/XMLSchema#"
+        "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
   }
 }
 ```
 
-### 9.2 Example
+### 12.2 Example
 
 ```json
 {
@@ -1074,6 +1279,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
         "geodcat": "http://data.europa.eu/930/",
         "gsp": "http://www.opengis.net/ont/geosparql#",
         "locn": "http://www.w3.org/ns/locn#",
+        "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
         "vcard": "http://www.w3.org/2006/vcard/ns#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
@@ -1099,7 +1305,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
             "@language": "nl"
         },
         {
-            "@value": "La liste de Smileys reprend toutes les entreprises qui possèdent actuellement un smiley. Le smiley est un autocollant attestant que l'entreprise applique un système d'hygiène digne de foi.",
+            "@value": "La liste de Smileys reprend toutes les entreprises qui possèdent momenteel un smiley. Le smiley est un autocollant attestant que l'entreprise applique un système d'hygiène digne de foi.",
             "@language": "fr"
         },
         {
@@ -1204,11 +1410,11 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
                     "@language": "nl"
                 }
             ],
-            "locn:postCode": 1000
+            "locn:postCode": "1000"
         }
-    },
-    "dcterms:modified": "2026-02-23",
-    "dcterms:created": "2012-06-01",
+    ],
+    "dcterms:modified": { "@value": "2026-02-23", "@type": "xsd:date" },
+    "dcterms:created": { "@value": "2012-06-01", "@type": "xsd:date" },
     "dcterms:spatial": {
         "@type": "dcterms:Location",
         "skos:prefLabel": [
@@ -1225,7 +1431,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
                 "@language": "en"
             }
         ],
-        "dcterms:identifier": "http://publications.europa.eu/resource/authority/country/BEL",
+        "dcterms:identifier": { "@id": "http://publications.europa.eu/resource/authority/country/BEL" },
         "dcat:bbox": {
             "@type": "gsp:wktLiteral",
             "@value": "POLYGON((2.51357303225 49.5294835476, 6.15665815596 49.5294835476, 6.15665815596 51.4750237087, 2.51357303225 51.4750237087, 2.51357303225 49.5294835476))"
@@ -1263,7 +1469,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 ------
 
-## 10. Validation
+## 13. Validation
 
 The output must:
 
