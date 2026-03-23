@@ -1425,7 +1425,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
             ],
             "locn:postCode": "1000"
         }
-    ],
+    },
     "dcterms:modified": { "@value": "2026-02-23", "@type": "xsd:date" },
     "dcterms:created": { "@value": "2012-06-01", "@type": "xsd:date" },
     "dcterms:spatial": {
