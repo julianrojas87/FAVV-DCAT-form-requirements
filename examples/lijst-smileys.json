@@ -10,6 +10,7 @@
         "geodcat": "http://data.europa.eu/930/",
         "gsp": "http://www.opengis.net/ont/geosparql#",
         "locn": "http://www.w3.org/ns/locn#",
+        "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
         "vcard": "http://www.w3.org/2006/vcard/ns#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
@@ -25,6 +26,10 @@
             "@language": "fr"
         },
         {
+            "@value": "Liste der Smileys",
+            "@language": "de"
+        },
+        {
             "@value": "List of Smileys",
             "@language": "en"
         }
@@ -35,8 +40,12 @@
             "@language": "nl"
         },
         {
-            "@value": "La liste de Smileys reprend toutes les entreprises qui possèdent actuellement un smiley. Le smiley est un autocollant attestant que l'entreprise applique un système d'hygiène digne de foi.",
+            "@value": "La liste des Smileys donne la liste de toutes les entreprises qui disposent actuellement d'un smiley. Le smiley est un autocollant montrant que l'entreprise applique un système d'hygiène crédible.",
             "@language": "fr"
+        },
+        {
+            "@value": "Die Smiley-Liste enthält eine Liste aller Unternehmen, die derzeit über einen Smiley verfügen. Der Smiley ist ein Aufkleber, der zeigt, dass das Unternehmen ein glaubwürdiges Hygienesystem anwendet.",
+            "@language": "de"
         },
         {
             "@value": "The Smileys list includes all companies that currently have a smiley face. The smiley is a sticker attesting that the company applies a reliable hygiene system.",
@@ -49,17 +58,45 @@
     },
     "dcterms:license": {
         "@type": "dcterms:LicenseDocument",
-        "dcterms:type": "dcmi:Text",
+        "dcterms:type": {
+            "@id": "http://purl.org/dc/dcmitype/Text"
+        },
         "dcterms:title": [
             {
                 "@value": "Licentietitel",
                 "@language": "nl"
+            },
+            {
+                "@value": "Titre de la licence",
+                "@language": "fr"
+            },
+            {
+                "@value": "Lizenz Titel",
+                "@language": "de"
+            },
+            {
+                "@value": "License Title",
+                "@language": "en"
             }
         ],
-        "dcterms:description": {
-            "@language": "nl",
-            "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die in een machinaal leesbaar formaat worden aangeboden en gratis te hergebruiken zijn, zowel voor commercieel als niet-commercieel gebruik, op voorwaarde dat de gebruiker de bron en de datum van laatste bijwerking vermeldt. De inhoud van de hergebruikte informatie mag niet misleidend zijn. In het bijzonder mag deze inhoud geen aanleiding geven tot de veronderstelling dat de gebruiker verbonden is met, de steun heeft van, goedgekeurd is door of een officieel statuut heeft verkregen van het FAVV."
-        }
+        "dcterms:description": [
+            {
+                "@language": "nl",
+                "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die in een machinaal leesbaar formaat worden aangeboden en gratis te hergebruiken zijn."
+            },
+            {
+                "@language": "fr",
+                "@value": "Les données ouvertes sont des données publiques, non personnelles, proposées dans un format lisible par machine et réutilisables gratuitement."
+            },
+            {
+                "@language": "de",
+                "@value": "Open Data sind öffentliche, nicht-personenbezogene Daten, die in einem maschinenlesbaren Format angeboten werden und kostenlos wiederverwendbar sind."
+            },
+            {
+                "@language": "en",
+                "@value": "Open data are public, non-personal data provided in a machine-readable format and free to reuse."
+            }
+        ]
     },
     "dcat:theme": [
         {
@@ -73,10 +110,24 @@
         {
             "@id": "https://favv-afsca.be/nl/open-data/distribution/smileys-csv",
             "@type": "dcat:Distribution",
-            "dcterms:title": {
-                "@value": "Lijst Smileys (CSV)",
-                "@language": "nl"
-            },
+            "dcterms:title": [
+                {
+                    "@value": "Lijst Smileys (CSV)",
+                    "@language": "nl"
+                },
+                {
+                    "@value": "Liste Smileys (CSV)",
+                    "@language": "fr"
+                },
+                {
+                    "@value": "Liste der Smileys (CSV)",
+                    "@language": "de"
+                },
+                {
+                    "@value": "List of Smileys (CSV)",
+                    "@language": "en"
+                }
+            ],
             "dcterms:format": {
                 "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
             },
@@ -94,7 +145,9 @@
     "dcterms:publisher": {
         "@id": "https://favv-afsca.be",
         "@type": "foaf:Organization",
-        "foaf:mbox": "mailto:center.contact@favv-afsca.be",
+        "foaf:mbox": {
+            "@id": "mailto:center.contact@favv-afsca.be"
+        },
         "foaf:workplaceHomepage": {
             "@id": "https://favv-afsca.be"
         },
@@ -106,6 +159,10 @@
             {
                 "@value": "Agence fédérale pour la sécurité de la chaîne alimentaire",
                 "@language": "fr"
+            },
+            {
+                "@value": "Föderalagentur für die Sicherheit der Nahrungsmittelkette",
+                "@language": "de"
             },
             {
                 "@value": "Federal Agency for the Safety of the Food Chain",
@@ -124,6 +181,10 @@
                     "@language": "fr"
                 },
                 {
+                    "@value": "Belgien",
+                    "@language": "de"
+                },
+                {
                     "@value": "Belgium",
                     "@language": "en"
                 }
@@ -138,13 +199,31 @@
                 {
                     "@value": "Brussel",
                     "@language": "nl"
+                },
+                {
+                    "@value": "Bruxelles",
+                    "@language": "fr"
+                },
+                {
+                    "@value": "Brüssel",
+                    "@language": "de"
+                },
+                {
+                    "@value": "Brussels",
+                    "@language": "en"
                 }
             ],
-            "locn:postCode": 1000
+            "locn:postCode": "1000"
         }
     },
-    "dcterms:modified": "2026-02-23",
-    "dcterms:created": "2012-06-01",
+    "dcterms:modified": {
+        "@value": "2026-02-23",
+        "@type": "xsd:date"
+    },
+    "dcterms:created": {
+        "@value": "2012-06-01",
+        "@type": "xsd:date"
+    },
     "dcterms:spatial": {
         "@type": "dcterms:Location",
         "skos:prefLabel": [
@@ -157,16 +236,22 @@
                 "@language": "fr"
             },
             {
+                "@value": "Belgien",
+                "@language": "de"
+            },
+            {
                 "@value": "Belgium",
                 "@language": "en"
             }
         ],
-        "dcterms:identifier": "http://publications.europa.eu/resource/authority/country/BEL",
-        "locn:geometry": {
+        "dcterms:identifier": {
+            "@id": "http://publications.europa.eu/resource/authority/country/BEL"
+        },
+        "dcat:bbox": {
             "@type": "gsp:wktLiteral",
             "@value": "POLYGON((2.51357303225 49.5294835476, 6.15665815596 49.5294835476, 6.15665815596 51.4750237087, 2.51357303225 51.4750237087, 2.51357303225 49.5294835476))"
         },
-        "dcat:bbox": {
+        "locn:geometry": {
             "@type": "gsp:wktLiteral",
             "@value": "POLYGON((2.51357303225 49.5294835476, 6.15665815596 49.5294835476, 6.15665815596 51.4750237087, 2.51357303225 51.4750237087, 2.51357303225 49.5294835476))"
         }
@@ -189,10 +274,10 @@
             "@id": "http://publications.europa.eu/resource/authority/language/FRA"
         },
         {
-            "@id": "http://publications.europa.eu/resource/authority/language/ENG"
+            "@id": "http://publications.europa.eu/resource/authority/language/DEU"
         },
         {
-            "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+            "@id": "http://publications.europa.eu/resource/authority/language/ENG"
         }
     ],
     "dcat:landingPage": {
