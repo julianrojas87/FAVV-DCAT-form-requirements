@@ -67,9 +67,9 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 | [Title](#413-title)                | `dcterms:title`              | `rdf:langString`                                   | 1           | M             |                                                              |
 | [Description](#414-description)    | `dcterms:description`        | `rdf:langString`                                   | 1           | M             |                                                              |
 | [Identifier](#415-identifier)      | `dcterms:identifier`         | `xsd:string`                                       | 1           | M             |                                                              |
-| [Access Rights](#416-access-rights)                        | `dcterms:accessRights`       | IRI                                                | 1           | M             | [see INSPIRE controlled vocabulary](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess) |
-| [License](#417-license)                              | `dcterms:license`            | [`dcterms:LicenseDocument`](#6-dctermsLicenseDocument-fields) | 1           | M             |                                                              |
-| [Theme](#418-theme)                                | `dcat:theme`                 | IRI                                                | 1...n       | M             | [see Belgif vocabulary](https://vocab.belgif.be/auth/datatheme/) |
+| [Access Rights](#416-access-rights)                        | `dcterms:accessRights`       | IRI                                                | 1           | M             | [EU Access Right Codelist](http://publications.europa.eu/resource/authority/access-right), [INSPIRE Limitations on Public Access](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess) |
+| [License](#417-license)                              | `dcterms:license`            | [`dcterms:LicenseDocument`](#6-dctermsLicenseDocument-fields) | 1           | M             | [Creative Commons Licenses](https://creativecommons.org/licenses/) |
+| [Theme](#418-theme)                                | `dcat:theme`                 | IRI                                                | 1...n       | M             | [EU Data Theme](http://publications.europa.eu/resource/authority/data-theme) (Mandatory), [INSPIRE Themes](http://inspire.ec.europa.eu/theme) (Recommended) |
 | [Distribution](#419-distribution)                         | `dcat:distribution`          | [`dcat:Distribution`](#5-dcatdistribution-fields) | 0...n       | R             |                                                              |
 | [Publisher](#4.1.10-publisher) | `dcterms:publisher` | [`foaf:Organization`](#11-foaforganization-fields) | 0...n | R | |
 | [Modified Date](#4.1.11-modified-date) | `dcterms:modified` | `xsd:date` | 0...1 | R | |
@@ -227,10 +227,10 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: select list (controlled vocabulary)
 - **Description**: Information about who can access the dataset or under what conditions.
 - **Cardinality**: 1
-- **Datatype**: IRI
+- **Datatype**: IRI (conform to RFC3987)
 - **Mapped to**: `dcterms:accessRights`
-- **Predefined values**: [INSPIRE registry for Limitations on Public Access](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess)
-- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
+- **Predefined values**: [EU Access Right Codelist](http://publications.europa.eu/resource/authority/access-right) and [INSPIRE Public Access Limitations](https://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess)
+- **Notes**: Must be a URI to a value within the controlled vocabulary. In Belgium, it is recommended to provide both the EU and INSPIRE versions if possible.
 - **Example**:
   
   ```json
@@ -274,10 +274,10 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: multi-select (controlled vocabulary)
 - **Description**: The main category or topic of the dataset.
 - **Cardinality**: 1...n
-- **Datatype**: IRI
+- **Datatype**: IRI (conform to RFC3987)
 - **Mapped to**: `dcat:theme`
-- **Predefined values**: [Data Theme Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/data-theme)
-- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
+- **Predefined values**: [EU Data Theme Codelist](http://publications.europa.eu/resource/authority/data-theme) (Mandatory) and [INSPIRE Themes](http://inspire.ec.europa.eu/theme) (Recommended)
+- **Notes**: Must be a URI to a value within the controlled vocabulary. For Belgian datasets, the Belgif vocabularies are also often used where applicable.
 - **Example**:
   ```json
   {
@@ -357,6 +357,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Cardinality**: 0...n
 - **Range Type**: `dcterms:Location`
 - **Mapped to**: `dcterms:spatial`
+- **Predefined values**: [EU Place Codelist](http://publications.europa.eu/resource/authority/place) (Recommended)
 - **Example**:
   ```json
   {
@@ -417,10 +418,10 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: select list (controlled vocabulary)
 - **Description**: The frequency at which the dataset is updated.
 - **Cardinality**: 0...1
-- **Datatype**: IRI
+- **Datatype**: IRI (conform to RFC3987)
 - **Mapped to**: `dcterms:accrualPeriodicity`
-- **Predefined values**: [Frequency Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/frequency)
-- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
+- **Predefined values**: [EU Frequency Codelist](http://publications.europa.eu/resource/authority/frequency) (Mandatory) and [INSPIRE Maintenance Frequency](http://inspire.ec.europa.eu/metadata-codelist/MaintenanceFrequency) (Recommended)
+- **Notes**: Must be a URI to a value within the controlled vocabulary.
 - **Example**:
   ```json
   {
@@ -433,9 +434,9 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: multi-select (controlled vocabulary)
 - **Description**: The language(s) of the dataset.
 - **Cardinality**: 0...4
-- **Datatype**: IRI
+- **Datatype**: IRI (conform to RFC3987)
 - **Mapped to**: `dcterms:language`
-- **Predefined values**: [Language Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language)
+- **Predefined values**: [EU Language Codelist](http://publications.europa.eu/resource/authority/language) (Mandatory)
 - **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   
@@ -863,9 +864,9 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: select list (controlled vocabulary)
 - **Description**: The type of the distribution.
 - **Cardinality**: 0...n
-- **Datatype**: IRI
+- **Datatype**: IRI (conform to RFC3987)
 - **Mapped to**: `dcterms:type`
-- **Predefined values**: [Distribution Type Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/distribution-type)
+- **Predefined values**: [EU Distribution Type Codelist](http://publications.europa.eu/resource/authority/distribution-type) (Optional)
 - **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
@@ -879,9 +880,9 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: multi-select (controlled vocabulary)
 - **Description**: The language(s) of the distribution.
 - **Cardinality**: 0...4
-- **Datatype**: IRI
+- **Datatype**: IRI (conform to RFC3987)
 - **Mapped to**: `dcterms:language`
-- **Predefined values**: [Language Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language)
+- **Predefined values**: [EU Language Codelist](http://publications.europa.eu/resource/authority/language) (Mandatory)
 - **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
 - **Example**:
   ```json
@@ -897,8 +898,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 | Field | JSON-LD Property | Range Type | Cardinality | DCAT-BE Level | Predefined Value(s) |
 |---|---|---|---|---|---|
-| [Title](#611-title) | `dcterms:title` | `rdf:langString` | 1...n | M | `dcmi:Text` |
-| [Type](#612-type) | `dcterms:type` | IRI | 1 | R |  |
+| [Title](#611-title) | `dcterms:title` | `rdf:langString` | 1...n | M |  |
+| [Type](#612-type) | `dcterms:type` | IRI | 1 | R | `dcmi:Text` |
 | [Description](#613-description) | `dcterms:description` | `rdf:langString` | 0...1 | O | |
 
 ------
@@ -974,7 +975,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 | [Geometry](#711-geometry) | `locn:geometry` | `xsd:string` | 1...4 | M | WKT or GML |
 | [Geographic Bounding Box](#712-geographic-bounding-box) | `dcat:bbox` | `xsd:string` | 1...4 | M | |
 | [Name](#713-name) | `skos:prefLabel` | `rdf:langString` | 0...1 | R | |
-| [Identifier](#714-identifier) | `dcterms:identifier` | IRI | 0...1 | R | |
+| [Identifier](#714-identifier) | `dcterms:identifier` | IRI | 0...1 | R | [EU Country Codelist](http://publications.europa.eu/resource/authority/country) (Mandatory) |
 
 ------
 
@@ -990,7 +991,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Example**:
   ```json
   {
-    "locn:geometry": { "@value": "POLYGON((...))", "@type": "geosparql:wktLiteral" }
+    "locn:geometry": { "@value": "POLYGON((...))", "@type": "gsp:wktLiteral" }
   }
   ```
 
@@ -1004,7 +1005,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Example**:
   ```json
   {
-    "dcat:bbox": { "@value": "POLYGON((...))", "@type": "geosparql:wktLiteral" }
+    "dcat:bbox": { "@value": "POLYGON((...))", "@type": "gsp:wktLiteral" }
   }
   ```
 
@@ -1027,9 +1028,10 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: text input (IRI or code)
 - **Description**: An identifier for the geographic entity.
 - **Cardinality**: 0...1
-- **Datatype**: IRI
+- **Datatype**: IRI (conform to RFC3987)
 - **Mapped to**: `dcterms:identifier`
-- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). Ideally it should be a dereference-able IRI.
+- **Predefined values**: [EU Country Codelist](http://publications.europa.eu/resource/authority/country) (Mandatory)
+- **Notes**: The form must validate that a well-formed IRI is given according [RFC3987](https://www.ietf.org/rfc/rfc3987.txt). For location identifiers, Belgian DCAT-AP mandates the use of the EU Country vocabulary for identifying member states.
 - **Example**:
   ```json
   {
@@ -1090,7 +1092,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 |---|---|---|---|---|---|
 | [Measured Scalar Quantity](#9.1.1-measured-scalar-quantity) | `dqv:isMeasurementOf` | IRI | 0...1 | O | `http://data.europa.eu/dr8/SpatialResolution` |
 | [Spatial Resolution as Scale](#9.1.2-spatial-resolution-as-scale) | `geodcat:spatialResolutionAsScale` | `xsd:decimal` | 1 | M (vector) | |
-| [Unit of Measure](#9.1.3-unit-of-measure) | `sdmx-attribute:unitMeasure` | `skos:Concept` | 1 | R (raster) | |
+| [Unit of Measure](#9.1.3-unit-of-measure) | `sdmx-attribute:unitMeasure` | IRI | 1 | M | [QUDT Units](http://www.qudt.org/vocab/unit/) (Mandatory) |
 | [Value of Measurement](#9.1.4-value-of-measurement) | `dqv:value` | `xsd:decimal` | 1 | M (raster) | |
 
 ------
@@ -1129,13 +1131,14 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 - **Form element**: Select list (controlled vocabulary)
 - **Description**: The unit of measurement for the resolution (for raster data).
-- **Cardinality**: 1 (Recommended for raster resources)
-- **Datatype**: `skos:Concept`
+- **Cardinality**: 1
+- **Datatype**: IRI (conform to RFC3987)
 - **Mapped to**: `sdmx-attribute:unitMeasure`
+- **Predefined values**: [QUDT Unit Vocabulary](http://www.qudt.org/vocab/unit/) (Mandatory)
 - **Example**:
   ```json
   {
-    "sdmx-attribute:unitMeasure": { "@id": "http://publications.europa.eu/resource/authority/unit/M" }
+    "sdmx-attribute:unitMeasure": { "@id": "http://qudt.org/vocab/unit/M" }
   }
   ```
 
@@ -1222,7 +1225,9 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Form element**: select list (controlled vocabulary)
 - **Description**: The type of the agent (e.g., Company, NGO, etc.).
 - **Cardinality**: 0...1
+- **Datatype**: IRI (conform to RFC3987)
 - **Mapped to**: `dcterms:type`
+- **Predefined values**: [EU Corporate Body Codelist](http://publications.europa.eu/resource/authority/corporate-body) (Optional)
 
 #### 11.1.3 Email
 - **Form element**: email input
@@ -1248,7 +1253,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 
 ```json
 {
-  "@context": {
+    "@context": {
         "adms": "http://www.w3.org/ns/adms#",
         "dcat": "http://www.w3.org/ns/dcat#",
         "dcterms": "http://purl.org/dc/terms/",
@@ -1288,31 +1293,27 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
     "@id": "https://www.static.favv.be/bo-documents/inter_liste_smiley",
     "@type": "dcat:Dataset",
     "dcterms:title": [
-        {
-            "@value": "Lijst Smileys",
-            "@language": "nl"
-        },
-        {
-            "@value": "Liste Smileys",
-            "@language": "fr"
-        },
-        {
-            "@value": "List of Smileys",
-            "@language": "en"
-        }
+        { "@value": "Lijst Smileys", "@language": "nl" },
+        { "@value": "Liste Smileys", "@language": "fr" },
+        { "@value": "Liste der Smileys", "@language": "de" },
+        { "@value": "List of Smileys", "@language": "en" }
     ],
     "dcterms:description": [
-        {
-            "@value": "De lijst van Smileys geeft een lijst van alle bedrijven die op dit ogenblik een smiley hebben. De smiley is een zelfklever die aantoont dat het bedrijf een geloofwaardig systeem van hygiëne toepast.",
-            "@language": "nl"
+        { 
+            "@value": "De lijst van Smileys geeft een lijst van alle bedrijven die op dit ogenblik een smiley hebben. De smiley is een zelfklever die aantoont dat het bedrijf een geloofwaardig systeem van hygiëne toepast.", 
+            "@language": "nl" 
         },
-        {
-            "@value": "La liste de Smileys reprend toutes les entreprises qui possèdent momenteel un smiley. Le smiley est un autocollant attestant que l'entreprise applique un système d'hygiène digne de foi.",
-            "@language": "fr"
+        { 
+            "@value": "La liste des Smileys donne la liste de toutes les entreprises qui disposent actuellement d'un smiley. Le smiley est un autocollant montrant que l'entreprise applique un système d'hygiène crédible.", 
+            "@language": "fr" 
         },
-        {
-            "@value": "The Smileys list includes all companies that currently have a smiley face. The smiley is a sticker attesting that the company applies a reliable hygiene system.",
-            "@language": "en"
+        { 
+            "@value": "Die Smiley-Liste enthält eine Liste aller Unternehmen, die derzeit über einen Smiley verfügen. Der Smiley ist ein Aufkleber, der zeigt, dass das Unternehmen ein glaubwürdiges Hygienesystem anwendet.", 
+            "@language": "de" 
+        },
+        { 
+            "@value": "The Smileys list includes all companies that currently have a smiley face. The smiley is a sticker attesting that the company applies a reliable hygiene system.", 
+            "@language": "en" 
         }
     ],
     "dcterms:identifier": "favv-smileys",
@@ -1321,96 +1322,79 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
     },
     "dcterms:license": {
         "@type": "dcterms:LicenseDocument",
-        "dcterms:type": "dcmi:Text",
+        "dcterms:type": { "@id": "http://purl.org/dc/dcmitype/Text" },
         "dcterms:title": [
-            {
-                "@value": "Licentietitel",
-                "@language": "nl"
-            }
+            { "@value": "Licentietitel", "@language": "nl" },
+            { "@value": "Titre de la licence", "@language": "fr" },
+            { "@value": "Lizenz Titel", "@language": "de" },
+            { "@value": "License Title", "@language": "en" }
         ],
-        "dcterms:description": {
-            "@language": "nl",
-            "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die in een machinaal leesbaar formaat worden aangeboden en gratis te hergebruiken zijn, zowel voor commercieel als niet-commercieel gebruik, op voorwaarde dat de gebruiker de bron en de datum van laatste bijwerking vermeldt. De inhoud van de hergebruikte informatie mag niet misleidend zijn. In het bijzonder mag deze inhoud geen aanleiding geven tot de veronderstelling dat de gebruiker verbonden is met, de steun heeft van, goedgekeurd is door of een officieel statuut heeft verkregen van het FAVV."
-        }
+        "dcterms:description": [
+            {
+                "@language": "nl",
+                "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die in een machinaal leesbaar formaat worden aangeboden en gratis te hergebruiken zijn."
+            },
+            {
+                "@language": "fr",
+                "@value": "Les données ouvertes sont des données publiques, non personnelles, proposées dans un format lisible par machine et réutilisables gratuitement."
+            },
+            {
+                "@language": "de",
+                "@value": "Open Data sind öffentliche, nicht-personenbezogene Daten, die in einem maschinenlesbaren Format angeboten werden und kostenlos wiederverwendbar sind."
+            },
+            {
+                "@language": "en",
+                "@value": "Open data are public, non-personal data provided in a machine-readable format and free to reuse."
+            }
+        ]
     },
     "dcat:theme": [
-        {
-            "@id": "https://vocab.belgif.be/auth/datatheme/HEAL"
-        },
-        {
-            "@id": "https://vocab.belgif.be/auth/datatheme/ECON"
-        }
+        { "@id": "https://vocab.belgif.be/auth/datatheme/HEAL" },
+        { "@id": "https://vocab.belgif.be/auth/datatheme/ECON" }
     ],
     "dcat:distribution": [
         {
             "@id": "https://favv-afsca.be/nl/open-data/distribution/smileys-csv",
             "@type": "dcat:Distribution",
-            "dcterms:title": {
-                "@value": "Lijst Smileys (CSV)",
-                "@language": "nl"
-            },
-            "dcterms:format": {
-                "@id": "http://publications.europa.eu/resource/authority/file-type/CSV"
-            },
-            "dcat:accessURL": {
-                "@id": "https://favv-afsca.be/nl/open-data"
-            },
-            "dcat:downloadURL": {
-                "@id": "https://www.static.favv.be/bo-documents/inter_liste_smiley.csv"
-            },
-            "dcat:mediaType": {
-                "@id": "https://www.iana.org/assignments/media-types/text/csv"
-            }
+            "dcterms:title": [
+                { "@value": "Lijst Smileys (CSV)", "@language": "nl" },
+                { "@value": "Liste Smileys (CSV)", "@language": "fr" },
+                { "@value": "Liste der Smileys (CSV)", "@language": "de" },
+                { "@value": "List of Smileys (CSV)", "@language": "en" }
+            ],
+            "dcterms:format": { "@id": "http://publications.europa.eu/resource/authority/file-type/CSV" },
+            "dcat:accessURL": { "@id": "https://favv-afsca.be/nl/open-data" },
+            "dcat:downloadURL": { "@id": "https://www.static.favv.be/bo-documents/inter_liste_smiley.csv" },
+            "dcat:mediaType": { "@id": "https://www.iana.org/assignments/media-types/text/csv" }
         }
     ],
     "dcterms:publisher": {
         "@id": "https://favv-afsca.be",
         "@type": "foaf:Organization",
-        "foaf:mbox": "mailto:center.contact@favv-afsca.be",
-        "foaf:workplaceHomepage": {
-            "@id": "https://favv-afsca.be"
-        },
+        "foaf:mbox": { "@id": "mailto:center.contact@favv-afsca.be" },
+        "foaf:workplaceHomepage": { "@id": "https://favv-afsca.be" },
         "foaf:name": [
-            {
-                "@value": "Federaal Agentschap voor de veiligheid van de voedselketen",
-                "@language": "nl"
-            },
-            {
-                "@value": "Agence fédérale pour la sécurité de la chaîne alimentaire",
-                "@language": "fr"
-            },
-            {
-                "@value": "Federal Agency for the Safety of the Food Chain",
-                "@language": "en"
-            }
+            { "@value": "Federaal Agentschap voor de veiligheid van de voedselketen", "@language": "nl" },
+            { "@value": "Agence fédérale pour la sécurité de la chaîne alimentaire", "@language": "fr" },
+            { "@value": "Föderalagentur für die Sicherheit der Nahrungsmittelkette", "@language": "de" },
+            { "@value": "Federal Agency for the Safety of the Food Chain", "@language": "en" }
         ],
         "locn:address": {
             "@type": "locn:Address",
             "locn:adminUnitL1": [
-                {
-                    "@value": "België",
-                    "@language": "nl"
-                },
-                {
-                    "@value": "Belgique",
-                    "@language": "fr"
-                },
-                {
-                    "@value": "Belgium",
-                    "@language": "en"
-                }
+                { "@value": "België", "@language": "nl" },
+                { "@value": "Belgique", "@language": "fr" },
+                { "@value": "Belgien", "@language": "de" },
+                { "@value": "Belgium", "@language": "en" }
             ],
             "locn:thoroughfare": [
-                {
-                    "@value": "Kruidtuinlaan 55",
-                    "@language": "nl"
-                }
+                { "@value": "Kruidtuinlaan 55", "@language": "nl" }
             ],
             "locn:postName": [
-                {
-                    "@value": "Brussel",
-                    "@language": "nl"
-                }
+                { "@value": "Brussel", "@language": "nl" },
+                { "@value": "Bruxelles", "@language": "fr" },
+                { "@value": "Brüssel", "@language": "de" },
+                { "@value": "Brussels", "@language": "en" }
             ],
             "locn:postCode": "1000"
         }
@@ -1420,21 +1404,17 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
     "dcterms:spatial": {
         "@type": "dcterms:Location",
         "skos:prefLabel": [
-            {
-                "@value": "België",
-                "@language": "nl"
-            },
-            {
-                "@value": "Belgique",
-                "@language": "fr"
-            },
-            {
-                "@value": "Belgium",
-                "@language": "en"
-            }
+            { "@value": "België", "@language": "nl" },
+            { "@value": "Belgique", "@language": "fr" },
+            { "@value": "Belgien", "@language": "de" },
+            { "@value": "Belgium", "@language": "en" }
         ],
         "dcterms:identifier": { "@id": "http://publications.europa.eu/resource/authority/country/BEL" },
         "dcat:bbox": {
+            "@type": "gsp:wktLiteral",
+            "@value": "POLYGON((2.51357303225 49.5294835476, 6.15665815596 49.5294835476, 6.15665815596 51.4750237087, 2.51357303225 51.4750237087, 2.51357303225 49.5294835476))"
+        },
+        "locn:geometry": {
             "@type": "gsp:wktLiteral",
             "@value": "POLYGON((2.51357303225 49.5294835476, 6.15665815596 49.5294835476, 6.15665815596 51.4750237087, 2.51357303225 51.4750237087, 2.51357303225 49.5294835476))"
         }
@@ -1442,32 +1422,21 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
     "dcat:contactPoint": {
         "@type": "vcard:Organization",
         "vcard:fn": "FAVV Center Contact",
-        "vcard:hasEmail": {
-            "@id": "mailto:center.contact@favv-afsca.be"
-        }
+        "vcard:hasEmail": { "@id": "mailto:center.contact@favv-afsca.be" }
     },
     "dcterms:accrualPeriodicity": {
         "@id": "http://publications.europa.eu/resource/authority/frequency/WEEKLY"
     },
     "dcterms:language": [
-        {
-            "@id": "http://publications.europa.eu/resource/authority/language/NLD"
-        },
-        {
-            "@id": "http://publications.europa.eu/resource/authority/language/FRA"
-        },
-        {
-            "@id": "http://publications.europa.eu/resource/authority/language/ENG"
-        },
-        {
-            "@id": "http://publications.europa.eu/resource/authority/language/DEU"
-        }
+        { "@id": "http://publications.europa.eu/resource/authority/language/NLD" },
+        { "@id": "http://publications.europa.eu/resource/authority/language/FRA" },
+        { "@id": "http://publications.europa.eu/resource/authority/language/DEU" },
+        { "@id": "http://publications.europa.eu/resource/authority/language/ENG" }
     ],
-    "dcat:landingPage": {
-        "@id": "https://favv-afsca.be/nl/open-data"
-    }
+    "dcat:landingPage": { "@id": "https://favv-afsca.be/nl/open-data" }
 }
 ```
+
 
 ------
 
