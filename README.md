@@ -88,7 +88,7 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 | [Subject](#4124-subject)                              | `dcterms:subject`            | IRI                                                | 0...n       | O             |                                                              |
 | [Origin](#4125-origin)                               | `dcterms:provenance`         | `dcterms:ProvenanceStatement`                      | 0...1       | O             |                                                              |
 | [Specification or Rule of Structuring](#4126-specification-or-rule-of-structuring) | `dcterms:conformsTo`         | `dcterms:Standard`                                 | 0...n       | O             |                                                              |
-| [Source Dataset](#4127-source-dataset)                       | `dcterms:source`             | `dcat:Dataset`                                     | 0...1       | O             |                                                              |
+| [Source Dataset](#4127-source-dataset)                       | `dcterms:source`             | [`dcat:Dataset`](#4-dcatdataset-fields)                                     | 0...1       | O             |                                                              |
 | [Distribution Example](#4128-distribution-example)                 | `adms:sample`                | [`dcat:Distribution`](#5-dcatdistribution-fields) | 0...1       | O             |                                                              |
 | [Maintainer](#4129-maintainer-and-other-agent-roles)                           | `geodcat:custodian`          | [`foaf:Organization`](#11-foaforganization-fields) | 0...n       | O             |                                                              |
 | [Creator](#4129-maintainer-and-other-agent-roles)                              | `dcterms:creator`            | [`foaf:Organization`](#11-foaforganization-fields) | 0...n       | O             |                                                              |
@@ -666,8 +666,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 | [Conforms To](#518-conforms-to) | `dcterms:conformsTo` | `dcterms:Standard` | 0...1 | O | |
 | [Byte Size](#519-byte-size) | `dcat:byteSize` | `xsd:decimal` | 0...1 | O | |
 | [Status](#5110-status) | `adms:status` | IRI | 0...1 | O | [ADMS Status Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/dataset-status) |
-| [Spatial Coverage](#5111-spatial-coverage) | `dcterms:spatial` | `dcterms:Location` | 0...1 | O | |
-| [Temporal Coverage](#5112-temporal-coverage) | `dcterms:temporal` | `dcterms:PeriodOfTime` | 0...1 | R | |
+| [Spatial Coverage](#5111-spatial-coverage) | `dcterms:spatial` | [`dcterms:Location`](#7-dctermslocation-fields) | 0...1 | O | |
+| [Temporal Coverage](#5112-temporal-coverage) | `dcterms:temporal` | [`dcterms:PeriodOfTime`](#8-dctermsperiodoftime-fields) | 0...1 | R | |
 | [Type](#5113-type) | `dcterms:type` | IRI | 0...n | O | [Distribution Type Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/distribution-type) |
 | [Language](#5114-language) | `dcterms:language` | IRI | 0...4 | R | [Language Codelist](https://publications.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/authority/language) |
 
@@ -1249,18 +1249,20 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 ```json
 {
   "@context": {
-      "adms": "http://www.w3.org/ns/adms#",
-      "dcat": "http://www.w3.org/ns/dcat#",
-      "dcterms": "http://purl.org/dc/terms/",
-      "dct": "http://purl.org/dc/terms/",
-      "dcmi": "http://purl.org/dc/dcmitype/",
-      "dqv": "http://www.w3.org/ns/dqv#",
-      "foaf": "http://xmlns.com/foaf/0.1/",
-      "geodcat": "http://data.europa.eu/930/",
+        "adms": "http://www.w3.org/ns/adms#",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dct": "http://purl.org/dc/terms/",
+        "dcmi": "http://purl.org/dc/dcmitype/",
+        "dqv": "http://www.w3.org/ns/dqv#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "geodcat": "http://data.europa.eu/930/",
+        "gsp": "http://www.opengis.net/ont/geosparql#",
+        "locn": "http://www.w3.org/ns/locn#",
         "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
         "vcard": "http://www.w3.org/2006/vcard/ns#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
-  }
+    }
 }
 ```
 
