@@ -255,17 +255,44 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
   {
     "dcterms:license": {
         "@type": "dcterms:LicenseDocument",
+        "@id": "https://creativecommons.org/licenses/by/4.0/",
         "dcterms:title": [
             {
-                "@value": "Licentietitel",
+                "@value": "Creative Commons Naamsvermelding 4.0 Internationaal (CC BY 4.0)",
                 "@language": "nl"
+            },
+            {
+                "@value": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+                "@language": "fr"
+            },
+            {
+                "@value": "Creative Commons Namensnennung 4.0 International (CC BY 4.0)",
+                "@language": "de"
+            },
+            {
+                "@value": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+                "@language": "en"
             }
         ],
-        "dcterms:type": "dcmi:Text",
-        "dcterms:description": {
-            "@language": "nl",
-            "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die in eenmachinaal leesbaar formaat worden aangeboden en gratis te hergebruiken zijn, zowel voor commercieel als niet-commercieel gebruik, op voorwaarde dat de gebruiker de bron en de datum van laatste bijwerking vermeldt. De inhoud van de hergebruikte informatie mag niet misleidend zijn. In het bijzonder mag deze inhoud geen aanleiding geven tot de veronderstelling dat de gebruiker verbonden is met, de steun heeft van, goedgekeurd is door of een officieel statuut heeft verkregen van het FAVV"
-        }
+        "dcterms:description": [
+            {
+                "@language": "nl",
+                "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die gratis te hergebruiken zijn onder de Creative Commons Naamsvermelding 4.0 licentie (CC BY 4.0), mits de bron wordt vermeld."
+            },
+            {
+                "@language": "fr",
+                "@value": "Les données ouvertes sont des données publiques, non personnelles, réutilisables gratuitement sous la licence Creative Commons Attribution 4.0 (CC BY 4.0), à condition de mentionner la source."
+            },
+            {
+                "@language": "de",
+                "@value": "Open Data sind öffentliche, nicht-personenbezogene Daten, die unter der Creative Commons Namensnennung 4.0 Lizenz (CC BY 4.0) kostenlos wiederverwendet werden können, sofern die Quelle angegeben wird."
+            },
+            {
+                "@language": "en",
+                "@value": "Open data are public, non-personal data that can be reused for free under the Creative Commons Attribution 4.0 license (CC BY 4.0), provided that the source is attributed."
+            }
+        ],
+        "dcterms:type": { "@id": "http://purl.org/dc/dcmitype/Text" }
     }
   }
   ```
@@ -944,8 +971,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
   ```json
   {
     "dcterms:title": [
-      { "@value": "Licentietitel", "@language": "nl" },
-      { "@value": "Titre de la licence", "@language": "fr" }
+      { "@value": "Creative Commons Naamsvermelding 4.0 Internationaal (CC BY 4.0)", "@language": "nl" },
+      { "@value": "Creative Commons Attribution 4.0 International (CC BY 4.0)", "@language": "fr" }
     ]
   }
   ```
@@ -984,10 +1011,24 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
 - **Example**:
   ```json
   {
-    "dcterms:description": {
-      "@language": "nl",
-      "@value": "Open data zijn openbare, niet persoonsgebonden gegevens..."
-    }
+    "dcterms:description": [
+      {
+        "@language": "nl",
+        "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die gratis te hergebruiken zijn onder de Creative Commons Naamsvermelding 4.0 licentie (CC BY 4.0), mits de bron wordt vermeld."
+      },
+      {
+        "@language": "fr",
+        "@value": "Les données ouvertes sont des données publiques, non personnelles, réutilisables gratuitement sous la licence Creative Commons Attribution 4.0 (CC BY 4.0), à condition de mentionner la source."
+      },
+      {
+        "@language": "de",
+        "@value": "Open Data sind öffentliche, nicht-personenbezogene Daten, die unter der Creative Commons Namensnennung 4.0 Lizenz (CC BY 4.0) kostenlos wiederverwendet werden können, sofern die Quelle angegeben wird."
+      },
+      {
+        "@language": "en",
+        "@value": "Open data are public, non-personal data that can be reused for free under the Creative Commons Attribution 4.0 license (CC BY 4.0), provided that the source is attributed."
+      }
+    ]
   }
   ```
 
@@ -1349,29 +1390,30 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
     },
     "dcterms:license": {
         "@type": "dcterms:LicenseDocument",
+        "@id": "https://creativecommons.org/licenses/by/4.0/",
         "dcterms:type": { "@id": "http://purl.org/dc/dcmitype/Text" },
         "dcterms:title": [
-            { "@value": "Licentietitel", "@language": "nl" },
-            { "@value": "Titre de la licence", "@language": "fr" },
-            { "@value": "Lizenz Titel", "@language": "de" },
-            { "@value": "License Title", "@language": "en" }
+            { "@value": "Creative Commons Naamsvermelding 4.0 Internationaal (CC BY 4.0)", "@language": "nl" },
+            { "@value": "Creative Commons Attribution 4.0 International (CC BY 4.0)", "@language": "fr" },
+            { "@value": "Creative Commons Namensnennung 4.0 International (CC BY 4.0)", "@language": "de" },
+            { "@value": "Creative Commons Attribution 4.0 International (CC BY 4.0)", "@language": "en" }
         ],
         "dcterms:description": [
             {
                 "@language": "nl",
-                "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die in een machinaal leesbaar formaat worden aangeboden en gratis te hergebruiken zijn."
+                "@value": "Open data zijn openbare, niet persoonsgebonden gegevens die gratis te hergebruiken zijn onder de Creative Commons Naamsvermelding 4.0 licentie (CC BY 4.0), mits de bron wordt vermeld."
             },
             {
                 "@language": "fr",
-                "@value": "Les données ouvertes sont des données publiques, non personnelles, proposées dans un format lisible par machine et réutilisables gratuitement."
+                "@value": "Les données ouvertes sont des données publiques, non personnelles, réutilisables gratuitement sous la licence Creative Commons Attribution 4.0 (CC BY 4.0), à condition de mentionner la source."
             },
             {
                 "@language": "de",
-                "@value": "Open Data sind öffentliche, nicht-personenbezogene Daten, die in einem maschinenlesbaren Format angeboten werden und kostenlos wiederverwendbar sind."
+                "@value": "Open Data sind öffentliche, nicht-personenbezogene Daten, die unter der Creative Commons Namensnennung 4.0 Lizenz (CC BY 4.0) kostenlos wiederverwendet werden können, sofern die Quelle angegeben wird."
             },
             {
                 "@language": "en",
-                "@value": "Open data are public, non-personal data provided in a machine-readable format and free to reuse."
+                "@value": "Open data are public, non-personal data that can be reused for free under the Creative Commons Attribution 4.0 license (CC BY 4.0), provided that the source is attributed."
             }
         ]
     },
