@@ -236,7 +236,8 @@ Below is the field list including Belgian DCAT-AP requirement levels and cardina
   ```json
   {
      "dcterms:accessRights": { 
-        "@id": "http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations" 
+        "@id": "http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations",
+        "@type": "dcterms:RightsStatement"
      }
   }
   ```
